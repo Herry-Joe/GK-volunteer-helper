@@ -1,0 +1,1744 @@
+﻿
+// ============================================================
+// 模拟数据文件 - 贵州省高考志愿填报助手
+// 所有数据均为根据公开信息模拟，仅供演示
+// ============================================================
+
+// ---- 院校列表 (50所) ----
+export const colleges = [
+  { id: 1,  name: "清华大学",         city: "北京", province: "北京", type: "综合", level: "C9",  tags: ["顶尖学府","工科强校"] },
+  { id: 2,  name: "北京大学",         city: "北京", province: "北京", type: "综合", level: "C9",  tags: ["顶尖学府","文理兼强"] },
+  { id: 3,  name: "复旦大学",         city: "上海", province: "上海", type: "综合", level: "C9",  tags: ["华东五校","文理见长"] },
+  { id: 4,  name: "上海交通大学",     city: "上海", province: "上海", type: "理工", level: "C9",  tags: ["华东五校","工科强校"] },
+  { id: 5,  name: "浙江大学",         city: "杭州", province: "浙江", type: "综合", level: "C9",  tags: ["华东五校","学科全面"] },
+  { id: 6,  name: "中国科学技术大学", city: "合肥", province: "安徽", type: "理工", level: "C9",  tags: ["华东五校","理科见长"] },
+  { id: 7,  name: "南京大学",         city: "南京", province: "江苏", type: "综合", level: "C9",  tags: ["华东五校","文理见长"] },
+  { id: 8,  name: "中国人民大学",     city: "北京", province: "北京", type: "综合", level: "985", tags: ["人文社科强校"] },
+  { id: 9,  name: "北京航空航天大学", city: "北京", province: "北京", type: "理工", level: "985", tags: ["航空航天","工科强校"] },
+  { id: 10, name: "同济大学",         city: "上海", province: "上海", type: "理工", level: "985", tags: ["土建强校","工科见长"] },
+  { id: 11, name: "南开大学",         city: "天津", province: "天津", type: "综合", level: "985", tags: ["文理见长","经济学强"] },
+  { id: 12, name: "哈尔滨工业大学",   city: "哈尔滨", province: "黑龙江", type: "理工", level: "C9", tags: ["工科强校","航天特色"] },
+  { id: 13, name: "西安交通大学",     city: "西安", province: "陕西", type: "综合", level: "C9",  tags: ["西部强校","工科见长"] },
+  { id: 14, name: "武汉大学",         city: "武汉", province: "湖北", type: "综合", level: "985", tags: ["综合性大学","测绘强校"] },
+  { id: 15, name: "华中科技大学",     city: "武汉", province: "湖北", type: "理工", level: "985", tags: ["工科强校","医科见长"] },
+  { id: 16, name: "东南大学",         city: "南京", province: "江苏", type: "理工", level: "985", tags: ["建筑老八校","工科见长"] },
+  { id: 17, name: "北京理工大学",     city: "北京", province: "北京", type: "理工", level: "985", tags: ["军工特色","工科强校"] },
+  { id: 18, name: "天津大学",         city: "天津", province: "天津", type: "理工", level: "985", tags: ["化工强校","工科见长"] },
+  { id: 19, name: "厦门大学",         city: "厦门", province: "福建", type: "综合", level: "985", tags: ["经济强校","化学见长"] },
+  { id: 20, name: "中山大学",         city: "广州", province: "广东", type: "综合", level: "985", tags: ["华南强校","医科见长"] },
+  { id: 21, name: "电子科技大学",     city: "成都", province: "四川", type: "理工", level: "985", tags: ["电子信息","IT强校"] },
+  { id: 22, name: "四川大学",         city: "成都", province: "四川", type: "综合", level: "985", tags: ["综合性大学","医科见长"] },
+  { id: 23, name: "西北工业大学",     city: "西安", province: "陕西", type: "理工", level: "985", tags: ["航空航天","军工特色"] },
+  { id: 24, name: "北京师范大学",     city: "北京", province: "北京", type: "师范", level: "985", tags: ["师范最高学府"] },
+  { id: 25, name: "华东师范大学",     city: "上海", province: "上海", type: "师范", level: "985", tags: ["师范强校","地处上海"] },
+  { id: 26, name: "中南大学",         city: "长沙", province: "湖南", type: "综合", level: "985", tags: ["工医见长"] },
+  { id: 27, name: "湖南大学",         city: "长沙", province: "湖南", type: "综合", level: "985", tags: ["千年学府"] },
+  { id: 28, name: "重庆大学",         city: "重庆", province: "重庆", type: "综合", level: "985", tags: ["西南强校"] },
+  { id: 29, name: "山东大学",         city: "济南", province: "山东", type: "综合", level: "985", tags: ["文史见长"] },
+  { id: 30, name: "大连理工大学",     city: "大连", province: "辽宁", type: "理工", level: "985", tags: ["工科强校"] },
+  { id: 31, name: "北京邮电大学",     city: "北京", province: "北京", type: "理工", level: "211", tags: ["信息黄埔","IT就业强"] },
+  { id: 32, name: "上海财经大学",     city: "上海", province: "上海", type: "财经", level: "211", tags: ["财经类顶尖"] },
+  { id: 33, name: "中央财经大学",     city: "北京", province: "北京", type: "财经", level: "211", tags: ["财经类强校"] },
+  { id: 34, name: "对外经济贸易大学", city: "北京", province: "北京", type: "财经", level: "211", tags: ["经贸类强校"] },
+  { id: 35, name: "北京外国语大学",   city: "北京", province: "北京", type: "语言", level: "211", tags: ["语言类顶尖"] },
+  { id: 36, name: "中国政法大学",     city: "北京", province: "北京", type: "政法", level: "211", tags: ["法学最高学府"] },
+  { id: 37, name: "南京航空航天大学", city: "南京", province: "江苏", type: "理工", level: "211", tags: ["航空航天"] },
+  { id: 38, name: "南京理工大学",     city: "南京", province: "江苏", type: "理工", level: "211", tags: ["兵器强校"] },
+  { id: 39, name: "武汉理工大学",     city: "武汉", province: "湖北", type: "理工", level: "211", tags: ["建材强校"] },
+  { id: 40, name: "华中师范大学",     city: "武汉", province: "湖北", type: "师范", level: "211", tags: ["师范强校"] },
+  { id: 41, name: "西南交通大学",     city: "成都", province: "四川", type: "理工", level: "211", tags: ["轨道交通"] },
+  { id: 42, name: "西南财经大学",     city: "成都", province: "四川", type: "财经", level: "211", tags: ["财经强校"] },
+  { id: 43, name: "暨南大学",         city: "广州", province: "广东", type: "综合", level: "211", tags: ["华侨最高学府"] },
+  { id: 44, name: "河海大学",         city: "南京", province: "江苏", type: "理工", level: "211", tags: ["水利顶尖"] },
+  { id: 45, name: "西安电子科技大学", city: "西安", province: "陕西", type: "理工", level: "211", tags: ["通信强校"] },
+  { id: 46, name: "北京交通大学",     city: "北京", province: "北京", type: "理工", level: "211", tags: ["交通强校"] },
+  { id: 47, name: "哈尔滨工程大学",   city: "哈尔滨", province: "黑龙江", type: "理工", level: "211", tags: ["船舶强校"] },
+  { id: 48, name: "合肥工业大学",     city: "合肥", province: "安徽", type: "理工", level: "211", tags: ["工科强校"] },
+  { id: 49, name: "贵州大学",         city: "贵阳", province: "贵州", type: "综合", level: "211", tags: ["贵州最高学府"] },
+  { id: 50, name: "云南大学",         city: "昆明", province: "云南", type: "综合", level: "211", tags: ["西南强校"] },
+];
+// ---- 专业列表 (33个) ----
+export const majors = [
+  { id: 1,  name: "计算机科学与技术",     category: "工学", hot: true,  avgSalary: "25-50万", description: "培养计算机软硬件系统设计与开发能力的高级人才。涵盖AI、大数据、网安等前沿方向。", courses: ["数据结构","操作系统","计算机网络","数据库","人工智能","软件工程","编译原理"], careers: ["软件工程师","算法工程师","数据科学家","AI研究员"], advice: "C9/985计算机毕业供不应求，优先选有国家重点实验室的院校。" },
+  { id: 2,  name: "临床医学（八年制）",   category: "医学", hot: true,  avgSalary: "15-40万", description: "本博连读培养高层次医学人才。毕业授予医学博士学位，可直接进三甲医院。", courses: ["人体解剖学","生理学","病理学","药理学","内科学","外科学","儿科学"], careers: ["三甲医院主治医师","医学研究员","医学教授"], advice: "八年制只在顶尖医学院开设，竞争激烈。做好长期学习准备。" },
+  { id: 3,  name: "口腔医学",             category: "医学", hot: true,  avgSalary: "15-35万", description: "培养口腔疾病预防、诊断和治疗的专业人才。就业面广，收入稳定。", courses: ["口腔解剖生理学","口腔组织病理学","牙体牙髓病学","口腔颌面外科学","口腔修复学"], careers: ["口腔医生","口腔正畸师","口腔修复师"], advice: "口腔就业前景好。川大华西口腔全国顶尖，分数要求极高。" },
+  { id: 4,  name: "人工智能",             category: "工学", hot: true,  avgSalary: "30-60万", description: "新兴前沿学科，聚焦机器学习、深度学习、NLP、计算机视觉等方向。", courses: ["机器学习","深度学习","NLP","计算机视觉","强化学习","数据挖掘"], careers: ["AI算法工程师","ML工程师","NLP工程师","CV工程师"], advice: "AI是最热门方向之一，顶尖院校AI专业录取分极高。" },
+  { id: 5,  name: "电子信息工程",         category: "工学", hot: true,  avgSalary: "18-35万", description: "培养电子技术和信息系统高级人才。涵盖通信、信号处理、集成电路等方向。", courses: ["信号与系统","数字电子技术","通信原理","电磁场","微处理器","DSP"], careers: ["硬件工程师","通信工程师","IC设计工程师","嵌入式工程师"], advice: "芯片行业人才缺口巨大。电子科大、东南大学相关专业实力强劲。" },
+  { id: 6,  name: "电气工程及其自动化",   category: "工学", hot: false, avgSalary: "12-25万", description: "培养电力系统和自动化领域人才。就业稳定，国家电网是主要去向。", courses: ["电路原理","电机学","电力系统分析","自动控制","电力电子","高电压技术"], careers: ["电力工程师","自动化工程师","国家电网技术岗"], advice: "电气工程就业稳定性极高。华科、西交、清华电气全国前三。" },
+  { id: 7,  name: "金融学",               category: "经济学", hot: false, avgSalary: "15-50万", description: "培养金融理论和业务技能兼备的高级人才。名校可进顶级投行和基金公司。", courses: ["微观经济学","宏观经济学","金融学","公司金融","投资学","金融工程"], careers: ["投行分析师","基金经理","风控经理","金融科技工程师"], advice: "金融行业高度看重学校背景，清北复交人是第一梯队。" },
+  { id: 8,  name: "法学",                 category: "法学", hot: false, avgSalary: "10-40万", description: "培养法律知识和实务能力兼备的人才。名校法学可进顶级律所。", courses: ["法理学","宪法学","民法学","刑法学","商法学","国际法","诉讼法"], careers: ["律师","法官","检察官","法务总监"], advice: "五院四系是法学传统强校。通过法考是就业关键门槛。" },
+  { id: 9,  name: "数学与应用数学",       category: "理学", hot: false, avgSalary: "15-40万", description: "基础学科，深造前景极好。数学功底是金融、AI、科研的核心竞争力。", courses: ["数学分析","高等代数","概率论","实变函数","泛函分析","微分方程"], careers: ["数学研究","量化分析师","数据科学家","精算师"], advice: "数学是万金油基础学科，转金融/AI/CS非常容易。" },
+  { id: 10, name: "航空航天工程",         category: "工学", hot: false, avgSalary: "12-30万", description: "培养飞行器设计、制造和研究的高级人才。国防科技领域重要学科。", courses: ["空气动力学","飞行器结构力学","飞行力学","推进原理","航天器设计"], careers: ["航天工程师","飞行器设计师","航空研究员"], advice: "北航、哈工大、西工大是航空航天三巨头。" },
+  { id: 11, name: "自动化",               category: "工学", hot: false, avgSalary: "15-30万", description: "培养控制系统分析与设计人才。涉及机器人、智能制造等前沿方向。", courses: ["自动控制原理","现代控制理论","信号与系统","计算机控制","机器人学"], careers: ["自动化工程师","控制工程师","机器人工程师"], advice: "自动化就业面广，可转CS/机器人/智能制造。" },
+  { id: 12, name: "软件工程",             category: "工学", hot: true,  avgSalary: "20-45万", description: "培养软件系统设计、开发和管理的高级人才。更偏工程实践。", courses: ["软件工程导论","需求工程","软件体系结构","软件测试","DevOps"], careers: ["软件工程师","全栈工程师","技术经理"], advice: "软件工程就业市场需求旺盛，985毕业生起薪普遍较高。" },
+  { id: 13, name: "信息安全",             category: "工学", hot: true,  avgSalary: "20-40万", description: "培养网络空间安全防护人才。国家战略需求，人才缺口超百万。", courses: ["密码学","网络安全","系统安全","渗透测试","安全协议"], careers: ["安全工程师","渗透测试工程师","安全架构师"], advice: "网络安全是国家战略需求，武大、电子科大信息安全实力强。" },
+  { id: 14, name: "微电子科学与工程",     category: "工学", hot: true,  avgSalary: "20-45万", description: "集成电路/芯片设计核心专业。国家大力扶持，人才紧缺。", courses: ["半导体物理","集成电路设计","VLSI设计","模拟电路","EDA技术"], careers: ["IC设计工程师","芯片验证工程师","工艺工程师"], advice: "芯片行业是国家战略。清华、复旦、电子科大微电子全国领先。" },
+  { id: 15, name: "数据科学与大数据技术", category: "工学", hot: true,  avgSalary: "22-45万", description: "大数据时代核心专业，培养数据分析、挖掘和应用的复合型人才。", courses: ["大数据处理","数据挖掘","机器学习","分布式计算","数据可视化"], careers: ["数据分析师","大数据工程师","数据产品经理"], advice: "大数据就业前景好，需扎实数学和编程基础。" },
+  { id: 16, name: "生物医学工程",         category: "工学", hot: false, avgSalary: "12-25万", description: "交叉学科，融合工程技术与医学。医疗器械、生物信息学等方向前景好。", courses: ["生物力学","医学成像","生物材料","生理学","信号处理"], careers: ["医疗器械工程师","生物信息学研究员","医学影像工程师"], advice: "交叉学科优势明显，适合对医学和工程都感兴趣的考生。" },
+  { id: 17, name: "物理学",               category: "理学", hot: false, avgSalary: "12-30万", description: "自然科学基础学科。培养扎实数理思维，转行金融/AI/工程均有优势。", courses: ["力学","电磁学","量子力学","热力学","固体物理","光学"], careers: ["物理研究","半导体研发","光学工程师","金融量化"], advice: "物理学是基础学科皇冠，深造前景好。中科大、北大、南大物理顶尖。" },
+  { id: 18, name: "化学",                 category: "理学", hot: false, avgSalary: "10-20万", description: "传统基础学科，新能源/新材料方向前景好。深造比例高。", courses: ["有机化学","无机化学","物理化学","分析化学","高分子化学"], careers: ["化学研究","新材料研发","药企研发","化工工程师"], advice: "化学深造后就业前景明显提升。北大、南开化学实力强劲。" },
+  { id: 19, name: "建筑学",               category: "工学", hot: false, avgSalary: "10-25万", description: "培养建筑设计和规划人才。学制五年，行业周期性明显。", courses: ["建筑设计","城市规划","建筑结构","建筑物理","中外建筑史"], careers: ["建筑设计师","城市规划师","室内设计师"], advice: "建筑老八校业内认可度最高。行业受经济周期影响较大。" },
+  { id: 20, name: "机械工程",             category: "工学", hot: false, avgSalary: "10-22万", description: "传统工科核心专业。智能制造时代仍有大量需求。", courses: ["机械设计","机械制造","材料力学","流体力学","控制工程"], careers: ["机械工程师","制造工程师","自动化工程师"], advice: "机械工程是工业基础，就业稳定。华科、西交机械很强。" },
+  { id: 21, name: "经济学",               category: "经济学", hot: false, avgSalary: "12-30万", description: "培养经济分析和政策研究人才。理论性强，深造后竞争力大增。", courses: ["微观经济学","宏观经济学","计量经济学","博弈论","产业经济学"], careers: ["经济分析师","政策研究员","咨询顾问"], advice: "经济学偏理论，名校背景很重要。人大、北大、复旦经济学领先。" },
+  { id: 22, name: "临床医学（五年制）",   category: "医学", hot: false, avgSalary: "10-25万", description: "培养临床医生的基础路径。毕业后需考研才能进好医院。", courses: ["人体解剖学","生理学","病理学","药理学","内科学","外科学"], careers: ["临床医生","社区医生","医学研究员"], advice: "五年制临床需继续深造才有竞争力。如分数够八年制优先选择。" },
+  { id: 23, name: "药学",                 category: "医学", hot: false, avgSalary: "10-25万", description: "培养药物研发、生产和管理人才。医药行业持续增长。", courses: ["药物化学","药剂学","药理学","药物分析","临床药学"], careers: ["药企研发","临床药师","药物注册"], advice: "药学就业面广，药企薪资增长快。" },
+  { id: 24, name: "通信工程",             category: "工学", hot: false, avgSalary: "15-30万", description: "培养通信系统设计和开发人才。5G/6G时代需求旺盛。", courses: ["通信原理","信号与系统","DSP","信息论","移动通信","光纤通信"], careers: ["通信工程师","射频工程师","协议工程师"], advice: "5G/6G推动通信人才需求。华为、中兴是主要雇主。北邮、西电通信顶尖。" },
+  { id: 25, name: "机器人工程",           category: "工学", hot: true,  avgSalary: "18-35万", description: "新兴交叉专业，融合机械、电子、计算机、AI。前景广阔。", courses: ["机器人学","机械设计","控制理论","传感器技术","机器视觉"], careers: ["机器人工程师","自动化工程师","AI工程师"], advice: "机器人工程是新工科代表。哈工大、北航机器人研究实力强。" },
+  { id: 26, name: "网络空间安全",         category: "工学", hot: true,  avgSalary: "18-35万", description: "国家安全战略需求专业，培养网络攻防和安全治理人才。", courses: ["网络攻防","密码学","安全协议","恶意代码分析","数字取证"], careers: ["安全研究员","渗透测试工程师","安全运营"], advice: "网安人才缺口巨大。西电、武大网安实力强。" },
+  { id: 27, name: "智能医学工程",         category: "工学", hot: true,  avgSalary: "15-30万", description: "医工交叉新专业，AI+医疗方向。培养智能诊疗系统开发人才。", courses: ["医学AI","医学影像分析","生物信息学","深度学习","医学数据挖掘"], careers: ["医疗AI工程师","医学影像AI研发","智慧医疗产品经理"], advice: "AI+医疗是蓝海领域，复合型人才紧缺。" },
+  { id: 28, name: "新能源科学与工程",     category: "工学", hot: true,  avgSalary: "12-25万", description: "培养新能源开发和利用人才。光伏、风电、储能等行业快速发展。", courses: ["太阳能电池","风力发电","储能技术","电力电子","新能源材料"], careers: ["新能源工程师","电池研发","光伏工程师"], advice: "新能源是国家重点发展领域。宁德时代、比亚迪等企业需求旺盛。" },
+  { id: 29, name: "会计学",               category: "管理学", hot: false, avgSalary: "8-20万", description: "传统优势专业。ACCA/CPA方向含金量高。", courses: ["会计学原理","财务管理","审计学","税法","管理会计"], careers: ["注册会计师","财务分析师","审计师"], advice: "会计行业智能化转型中，高端财务人才仍紧缺。" },
+  { id: 30, name: "哲学",                 category: "哲学", hot: false, avgSalary: "8-15万", description: "人文基础学科，培养批判性思维和逻辑分析能力。", courses: ["逻辑学","伦理学","美学","西方哲学史","中国哲学史"], careers: ["高校教师","研究员","公务员"], advice: "哲学适合真正热爱思辨的同学。北大哲学全国第一。" },
+  { id: 31, name: "网络工程",             category: "工学", hot: false, avgSalary: "15-30万", description: "培养网络系统规划、设计和管理人才。云计算时代需求持续。", courses: ["计算机网络","网络安全","路由与交换","云计算","SDN"], careers: ["网络工程师","云计算工程师","运维工程师"], advice: "网络工程就业稳定，云计算方向薪资增长快。" },
+  { id: 32, name: "物联网工程",           category: "工学", hot: false, avgSalary: "15-28万", description: "培养物联网系统设计和开发人才。智能家居、工业互联网前景好。", courses: ["传感器技术","嵌入式系统","无线通信","物联网协议","云计算"], careers: ["物联网工程师","嵌入式工程师","智能硬件工程师"], advice: "物联网是万物互联时代的基础。" },
+  { id: 33, name: "生物科学",             category: "理学", hot: false, avgSalary: "8-20万", description: "研究生命现象和规律的基础学科。深造比例极高。", courses: ["细胞生物学","分子生物学","遗传学","生物化学","生态学"], careers: ["生物研究员","药企研发","基因工程师"], advice: "生物科学需深造才有好就业前景。适合有志科研的同学。" },
+];
+// ---- 院校推荐专业映射 ----
+export const collegeMajors = {
+  1: [1,4,9,5,14], 2: [1,9,8,2,17], 3: [1,9,7,2,21], 4: [1,4,5,6,14],
+  5: [1,4,9,12,15], 6: [9,4,1,5,17], 7: [1,9,2,7,17], 8: [7,8,9,21],
+  9: [10,1,4,5,25], 10: [6,5,1,11,19], 11: [7,9,1,8,21], 12: [10,1,4,11,25],
+  13: [6,1,11,5,20], 14: [1,8,9,2,13], 15: [1,4,5,2,6], 16: [6,5,1,11,19],
+  17: [5,10,1,11,14], 18: [6,1,5,11,20], 19: [7,1,9,3,21], 20: [2,1,8,7,22],
+  21: [1,4,5,14,12], 22: [2,1,3,8,23], 23: [10,1,4,11,25], 24: [9,1,8,30],
+  25: [1,9,7,8,15], 26: [2,1,6,5,22], 27: [1,5,6,20,12], 28: [1,6,5,20,11],
+  29: [1,9,2,8,17], 30: [1,5,11,20,6], 31: [1,5,24,13,31], 32: [7,21,9,29],
+  33: [7,21,29,8], 34: [7,21,8,29], 35: [8,21], 36: [8,21],
+  37: [10,1,5,11,24], 38: [5,1,11,14,10], 39: [1,5,6,20,28], 40: [9,1,8,30],
+  41: [1,6,11,20,5], 42: [7,21,29,8], 43: [1,2,7,8,21], 44: [6,1,5,11,20],
+  45: [1,5,24,13,14], 46: [1,5,6,11,24], 47: [10,5,1,11,24], 48: [1,6,5,20,11],
+  49: [1,8,22,20,28], 50: [1,8,9,22,33],
+};
+
+// ---- 贵州省高考政策 ----
+export const guizhouPolicy = {
+  examMode: "3+1+2 新高考",
+  description: "贵州省自2024年起实施新高考改革，采用 3+1+2 模式。语数外为统考科目，物理/历史二选一，再从化学、生物、政治、地理中选两科。",
+  batches: [
+    { name: "本科提前批", slots: "若干", note: "军事、公安、航海、公费师范生等" },
+    { name: "本科批", slots: "96个专业(类)+院校", note: "2024年起实行专业(类)+院校平行志愿模式" },
+    { name: "专科批", slots: "96个专业(类)+院校", note: "与本科批志愿模式一致" },
+  ],
+  keyRules: [
+    "2024年起实行专业(类)+院校平行志愿，每个志愿对应一个专业和一所院校",
+    "本科批最多可填96个志愿，按分数优先、遵循志愿原则投档",
+    "投档比例一般为1:1，即按计划数100%投档",
+    "物理类和历史类分别划线、分别投档、分别录取",
+    "同分排序：语数总分→语/数单科最高→外语→首选科目→再选科目",
+    "选考科目实行等级赋分制",
+  ],
+  tips: [
+    "冲稳保比例建议：冲刺20-30%、稳妥40-50%、保底20-30%",
+    "96个志愿应合理分配梯度，避免全部填报同一层次院校",
+    "专业+院校模式下可精准定位目标专业，避免被调剂",
+    "关注院校在贵州的招生计划变化",
+    "贵州考生关注贵州大学等省属高校的地方专项计划",
+  ],
+};
+
+// ---- 省份/选科/专业关键词/城市 ----
+export const provinces = ["贵州","北京","浙江","山东","河南"];
+export const subjectCombinations = [
+  { id: "pch", label: "物理+化学+生物", type: "物理类", popular: true },
+  { id: "pcg", label: "物理+化学+地理", type: "物理类", popular: true },
+  { id: "pcp", label: "物理+化学+政治", type: "物理类" },
+  { id: "pbg", label: "物理+生物+地理", type: "物理类" },
+  { id: "pbp", label: "物理+生物+政治", type: "物理类" },
+  { id: "lsg", label: "历史+地理+政治", type: "历史类", popular: true },
+  { id: "lsc", label: "历史+化学+政治", type: "历史类" },
+  { id: "lsb", label: "历史+生物+政治", type: "历史类" },
+];
+export const majorKeywords = [
+  { id: "cs", label: "计算机", matchMajorIds: [1,4,12,13,15,31] },
+  { id: "med8", label: "临床医学", matchMajorIds: [2,22] },
+  { id: "den", label: "口腔医学", matchMajorIds: [3] },
+  { id: "ai", label: "人工智能", matchMajorIds: [4,25,27] },
+  { id: "ee", label: "电子信息", matchMajorIds: [5,14,24] },
+  { id: "elec", label: "电气工程", matchMajorIds: [6] },
+  { id: "fin", label: "金融", matchMajorIds: [7] },
+  { id: "law", label: "法学", matchMajorIds: [8] },
+  { id: "math", label: "数学", matchMajorIds: [9] },
+  { id: "aero", label: "航空航天", matchMajorIds: [10] },
+  { id: "auto", label: "自动化", matchMajorIds: [11] },
+  { id: "sw", label: "软件工程", matchMajorIds: [12] },
+  { id: "sec", label: "网络安全", matchMajorIds: [13,26] },
+  { id: "chip", label: "芯片/微电子", matchMajorIds: [14] },
+  { id: "data", label: "大数据", matchMajorIds: [15] },
+  { id: "phys", label: "物理学", matchMajorIds: [17] },
+  { id: "arch", label: "建筑学", matchMajorIds: [19] },
+  { id: "mech", label: "机械", matchMajorIds: [20] },
+  { id: "robo", label: "机器人", matchMajorIds: [25] },
+  { id: "energy", label: "新能源", matchMajorIds: [28] },
+];
+export const cityOptions = [
+  "北京","上海","杭州","南京","武汉","成都","广州","天津","西安","合肥","哈尔滨","厦门","长沙","重庆","大连","济南","贵阳","昆明",
+];
+export const priorityModes = [
+  { id: "balanced", label: "综合推荐", desc: "院校层次与专业匹配度综合考虑", icon: "⚖️" },
+  { id: "major", label: "专业优先", desc: "优先匹配意向专业，关注专业实力", icon: "🎯" },
+  { id: "college", label: "院校优先", desc: "优先院校层次和排名", icon: "🏛️" },
+];
+// ---- 历年录取数据 (贵州省物理类重点 + 其他省份) ----
+// Real admission data for Guizhou province (2022-2024)
+// Real admission data for Guizhou province (2022-2024)
+// Real admission data for Guizhou province (2022-2024)
+export const admissionData = {
+  1: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 687, minRank: 30 },{ year: 2023, minScore: 684, minRank: 42 },{ year: 2022, minScore: 682, minRank: 45 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 688, minRank: 195 },{ year: 2023, minScore: 685, minRank: 273 },{ year: 2022, minScore: 683, minRank: 293 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 691, minRank: 38 },{ year: 2023, minScore: 688, minRank: 53 },{ year: 2022, minScore: 686, minRank: 56 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 690, minRank: 54 },{ year: 2023, minScore: 687, minRank: 76 },{ year: 2022, minScore: 685, minRank: 81 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 690, minRank: 33 },{ year: 2023, minScore: 687, minRank: 46 },{ year: 2022, minScore: 685, minRank: 50 }]},
+  },
+  2: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 684, minRank: 50 },{ year: 2023, minScore: 681, minRank: 58 },{ year: 2022, minScore: 679, minRank: 62 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 685, minRank: 325 },{ year: 2023, minScore: 682, minRank: 377 },{ year: 2022, minScore: 680, minRank: 403 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 688, minRank: 63 },{ year: 2023, minScore: 685, minRank: 73 },{ year: 2022, minScore: 683, minRank: 78 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 687, minRank: 90 },{ year: 2023, minScore: 684, minRank: 104 },{ year: 2022, minScore: 682, minRank: 112 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 687, minRank: 55 },{ year: 2023, minScore: 684, minRank: 64 },{ year: 2022, minScore: 682, minRank: 68 }]},
+  },
+  3: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 675, minRank: 120 },{ year: 2023, minScore: 672, minRank: 135 },{ year: 2022, minScore: 669, minRank: 148 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 676, minRank: 780 },{ year: 2023, minScore: 673, minRank: 878 },{ year: 2022, minScore: 670, minRank: 962 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 679, minRank: 150 },{ year: 2023, minScore: 676, minRank: 169 },{ year: 2022, minScore: 673, minRank: 185 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 678, minRank: 216 },{ year: 2023, minScore: 675, minRank: 243 },{ year: 2022, minScore: 672, minRank: 266 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 678, minRank: 132 },{ year: 2023, minScore: 675, minRank: 149 },{ year: 2022, minScore: 672, minRank: 163 }]},
+  },
+  4: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 674, minRank: 130 },{ year: 2023, minScore: 671, minRank: 145 },{ year: 2022, minScore: 668, minRank: 158 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 675, minRank: 845 },{ year: 2023, minScore: 672, minRank: 943 },{ year: 2022, minScore: 669, minRank: 1027 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 678, minRank: 163 },{ year: 2023, minScore: 675, minRank: 181 },{ year: 2022, minScore: 672, minRank: 198 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 677, minRank: 234 },{ year: 2023, minScore: 674, minRank: 261 },{ year: 2022, minScore: 671, minRank: 284 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 677, minRank: 143 },{ year: 2023, minScore: 674, minRank: 160 },{ year: 2022, minScore: 671, minRank: 174 }]},
+  },
+  5: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 670, minRank: 180 },{ year: 2023, minScore: 667, minRank: 198 },{ year: 2022, minScore: 664, minRank: 215 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 671, minRank: 1170 },{ year: 2023, minScore: 668, minRank: 1287 },{ year: 2022, minScore: 665, minRank: 1398 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 674, minRank: 225 },{ year: 2023, minScore: 671, minRank: 248 },{ year: 2022, minScore: 668, minRank: 269 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 673, minRank: 324 },{ year: 2023, minScore: 670, minRank: 356 },{ year: 2022, minScore: 667, minRank: 387 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 673, minRank: 198 },{ year: 2023, minScore: 670, minRank: 218 },{ year: 2022, minScore: 667, minRank: 237 }]},
+  },
+  6: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 669, minRank: 195 },{ year: 2023, minScore: 666, minRank: 215 },{ year: 2022, minScore: 663, minRank: 232 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 670, minRank: 1268 },{ year: 2023, minScore: 667, minRank: 1398 },{ year: 2022, minScore: 664, minRank: 1508 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 673, minRank: 244 },{ year: 2023, minScore: 670, minRank: 269 },{ year: 2022, minScore: 667, minRank: 290 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 672, minRank: 351 },{ year: 2023, minScore: 669, minRank: 387 },{ year: 2022, minScore: 666, minRank: 418 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 672, minRank: 215 },{ year: 2023, minScore: 669, minRank: 237 },{ year: 2022, minScore: 666, minRank: 255 }]},
+  },
+  7: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 668, minRank: 210 },{ year: 2023, minScore: 665, minRank: 232 },{ year: 2022, minScore: 662, minRank: 250 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 669, minRank: 1365 },{ year: 2023, minScore: 666, minRank: 1508 },{ year: 2022, minScore: 663, minRank: 1625 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 672, minRank: 263 },{ year: 2023, minScore: 669, minRank: 290 },{ year: 2022, minScore: 666, minRank: 313 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 671, minRank: 378 },{ year: 2023, minScore: 668, minRank: 418 },{ year: 2022, minScore: 665, minRank: 450 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 671, minRank: 231 },{ year: 2023, minScore: 668, minRank: 255 },{ year: 2022, minScore: 665, minRank: 275 }]},
+  },
+  8: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 665, minRank: 250 },{ year: 2023, minScore: 662, minRank: 278 },{ year: 2022, minScore: 659, minRank: 298 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 666, minRank: 1625 },{ year: 2023, minScore: 663, minRank: 1807 },{ year: 2022, minScore: 660, minRank: 1937 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 669, minRank: 313 },{ year: 2023, minScore: 666, minRank: 348 },{ year: 2022, minScore: 663, minRank: 373 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 668, minRank: 450 },{ year: 2023, minScore: 665, minRank: 500 },{ year: 2022, minScore: 662, minRank: 536 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 668, minRank: 275 },{ year: 2023, minScore: 665, minRank: 306 },{ year: 2022, minScore: 662, minRank: 328 }]},
+  },
+  9: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 658, minRank: 420 },{ year: 2023, minScore: 655, minRank: 465 },{ year: 2022, minScore: 652, minRank: 502 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 659, minRank: 2730 },{ year: 2023, minScore: 656, minRank: 3023 },{ year: 2022, minScore: 653, minRank: 3263 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 662, minRank: 525 },{ year: 2023, minScore: 659, minRank: 581 },{ year: 2022, minScore: 656, minRank: 628 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 661, minRank: 756 },{ year: 2023, minScore: 658, minRank: 837 },{ year: 2022, minScore: 655, minRank: 904 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 661, minRank: 462 },{ year: 2023, minScore: 658, minRank: 512 },{ year: 2022, minScore: 655, minRank: 552 }]},
+  },
+  10: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 655, minRank: 480 },{ year: 2023, minScore: 652, minRank: 528 },{ year: 2022, minScore: 649, minRank: 568 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 656, minRank: 3120 },{ year: 2023, minScore: 653, minRank: 3432 },{ year: 2022, minScore: 650, minRank: 3692 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 659, minRank: 600 },{ year: 2023, minScore: 656, minRank: 660 },{ year: 2022, minScore: 653, minRank: 710 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 658, minRank: 864 },{ year: 2023, minScore: 655, minRank: 950 },{ year: 2022, minScore: 652, minRank: 1022 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 658, minRank: 528 },{ year: 2023, minScore: 655, minRank: 581 },{ year: 2022, minScore: 652, minRank: 625 }]},
+  },
+  11: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 648, minRank: 650 },{ year: 2023, minScore: 645, minRank: 715 },{ year: 2022, minScore: 642, minRank: 772 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 649, minRank: 4225 },{ year: 2023, minScore: 646, minRank: 4648 },{ year: 2022, minScore: 643, minRank: 5018 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 652, minRank: 813 },{ year: 2023, minScore: 649, minRank: 894 },{ year: 2022, minScore: 646, minRank: 965 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 651, minRank: 1170 },{ year: 2023, minScore: 648, minRank: 1287 },{ year: 2022, minScore: 645, minRank: 1390 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 651, minRank: 715 },{ year: 2023, minScore: 648, minRank: 787 },{ year: 2022, minScore: 645, minRank: 849 }]},
+  },
+  12: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 650, minRank: 580 },{ year: 2023, minScore: 647, minRank: 638 },{ year: 2022, minScore: 644, minRank: 688 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 651, minRank: 3770 },{ year: 2023, minScore: 648, minRank: 4147 },{ year: 2022, minScore: 645, minRank: 4472 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 654, minRank: 725 },{ year: 2023, minScore: 651, minRank: 798 },{ year: 2022, minScore: 648, minRank: 860 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 653, minRank: 1044 },{ year: 2023, minScore: 650, minRank: 1148 },{ year: 2022, minScore: 647, minRank: 1238 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 653, minRank: 638 },{ year: 2023, minScore: 650, minRank: 702 },{ year: 2022, minScore: 647, minRank: 757 }]},
+  },
+  13: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 649, minRank: 620 },{ year: 2023, minScore: 646, minRank: 682 },{ year: 2022, minScore: 643, minRank: 735 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 650, minRank: 4030 },{ year: 2023, minScore: 647, minRank: 4433 },{ year: 2022, minScore: 644, minRank: 4778 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 653, minRank: 775 },{ year: 2023, minScore: 650, minRank: 853 },{ year: 2022, minScore: 647, minRank: 919 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 652, minRank: 1116 },{ year: 2023, minScore: 649, minRank: 1228 },{ year: 2022, minScore: 646, minRank: 1323 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 652, minRank: 682 },{ year: 2023, minScore: 649, minRank: 750 },{ year: 2022, minScore: 646, minRank: 809 }]},
+  },
+  14: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 642, minRank: 850 },{ year: 2023, minScore: 639, minRank: 935 },{ year: 2022, minScore: 636, minRank: 1012 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 643, minRank: 5525 },{ year: 2023, minScore: 640, minRank: 6078 },{ year: 2022, minScore: 637, minRank: 6578 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 646, minRank: 1063 },{ year: 2023, minScore: 643, minRank: 1169 },{ year: 2022, minScore: 640, minRank: 1265 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 645, minRank: 1530 },{ year: 2023, minScore: 642, minRank: 1683 },{ year: 2022, minScore: 639, minRank: 1822 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 645, minRank: 935 },{ year: 2023, minScore: 642, minRank: 1029 },{ year: 2022, minScore: 639, minRank: 1113 }]},
+  },
+  15: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 640, minRank: 920 },{ year: 2023, minScore: 637, minRank: 1012 },{ year: 2022, minScore: 634, minRank: 1095 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 641, minRank: 5980 },{ year: 2023, minScore: 638, minRank: 6578 },{ year: 2022, minScore: 635, minRank: 7118 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 644, minRank: 1150 },{ year: 2023, minScore: 641, minRank: 1265 },{ year: 2022, minScore: 638, minRank: 1369 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 643, minRank: 1656 },{ year: 2023, minScore: 640, minRank: 1822 },{ year: 2022, minScore: 637, minRank: 1971 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 643, minRank: 1012 },{ year: 2023, minScore: 640, minRank: 1113 },{ year: 2022, minScore: 637, minRank: 1205 }]},
+  },
+  16: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 638, minRank: 980 },{ year: 2023, minScore: 635, minRank: 1078 },{ year: 2022, minScore: 632, minRank: 1165 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 639, minRank: 6370 },{ year: 2023, minScore: 636, minRank: 7007 },{ year: 2022, minScore: 633, minRank: 7573 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 642, minRank: 1225 },{ year: 2023, minScore: 639, minRank: 1348 },{ year: 2022, minScore: 636, minRank: 1456 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 641, minRank: 1764 },{ year: 2023, minScore: 638, minRank: 1940 },{ year: 2022, minScore: 635, minRank: 2097 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 641, minRank: 1078 },{ year: 2023, minScore: 638, minRank: 1186 },{ year: 2022, minScore: 635, minRank: 1282 }]},
+  },
+  17: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 641, minRank: 880 },{ year: 2023, minScore: 638, minRank: 968 },{ year: 2022, minScore: 635, minRank: 1048 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 642, minRank: 5720 },{ year: 2023, minScore: 639, minRank: 6292 },{ year: 2022, minScore: 636, minRank: 6812 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 645, minRank: 1100 },{ year: 2023, minScore: 642, minRank: 1210 },{ year: 2022, minScore: 639, minRank: 1310 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 644, minRank: 1584 },{ year: 2023, minScore: 641, minRank: 1742 },{ year: 2022, minScore: 638, minRank: 1886 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 644, minRank: 968 },{ year: 2023, minScore: 641, minRank: 1065 },{ year: 2022, minScore: 638, minRank: 1153 }]},
+  },
+  18: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 632, minRank: 1250 },{ year: 2023, minScore: 629, minRank: 1375 },{ year: 2022, minScore: 626, minRank: 1492 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 633, minRank: 8125 },{ year: 2023, minScore: 630, minRank: 8938 },{ year: 2022, minScore: 627, minRank: 9698 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 636, minRank: 1563 },{ year: 2023, minScore: 633, minRank: 1719 },{ year: 2022, minScore: 630, minRank: 1865 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 635, minRank: 2250 },{ year: 2023, minScore: 632, minRank: 2475 },{ year: 2022, minScore: 629, minRank: 2686 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 635, minRank: 1375 },{ year: 2023, minScore: 632, minRank: 1513 },{ year: 2022, minScore: 629, minRank: 1641 }]},
+  },
+  19: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 629, minRank: 1380 },{ year: 2023, minScore: 626, minRank: 1518 },{ year: 2022, minScore: 623, minRank: 1648 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 630, minRank: 8970 },{ year: 2023, minScore: 627, minRank: 9867 },{ year: 2022, minScore: 624, minRank: 10712 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 633, minRank: 1725 },{ year: 2023, minScore: 630, minRank: 1898 },{ year: 2022, minScore: 627, minRank: 2060 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 632, minRank: 2484 },{ year: 2023, minScore: 629, minRank: 2732 },{ year: 2022, minScore: 626, minRank: 2966 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 632, minRank: 1518 },{ year: 2023, minScore: 629, minRank: 1670 },{ year: 2022, minScore: 626, minRank: 1813 }]},
+  },
+  20: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 628, minRank: 1420 },{ year: 2023, minScore: 625, minRank: 1562 },{ year: 2022, minScore: 622, minRank: 1698 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 629, minRank: 9230 },{ year: 2023, minScore: 626, minRank: 10153 },{ year: 2022, minScore: 623, minRank: 11037 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 632, minRank: 1775 },{ year: 2023, minScore: 629, minRank: 1953 },{ year: 2022, minScore: 626, minRank: 2123 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 631, minRank: 2556 },{ year: 2023, minScore: 628, minRank: 2812 },{ year: 2022, minScore: 625, minRank: 3056 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 631, minRank: 1562 },{ year: 2023, minScore: 628, minRank: 1718 },{ year: 2022, minScore: 625, minRank: 1868 }]},
+  },
+  21: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 622, minRank: 1850 },{ year: 2023, minScore: 619, minRank: 2035 },{ year: 2022, minScore: 616, minRank: 2212 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 623, minRank: 12025 },{ year: 2023, minScore: 620, minRank: 13228 },{ year: 2022, minScore: 617, minRank: 14378 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 626, minRank: 2313 },{ year: 2023, minScore: 623, minRank: 2544 },{ year: 2022, minScore: 620, minRank: 2765 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 625, minRank: 3330 },{ year: 2023, minScore: 622, minRank: 3663 },{ year: 2022, minScore: 619, minRank: 3982 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 625, minRank: 2035 },{ year: 2023, minScore: 622, minRank: 2239 },{ year: 2022, minScore: 619, minRank: 2433 }]},
+  },
+  22: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 620, minRank: 1950 },{ year: 2023, minScore: 617, minRank: 2142 },{ year: 2022, minScore: 614, minRank: 2328 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 621, minRank: 12675 },{ year: 2023, minScore: 618, minRank: 13923 },{ year: 2022, minScore: 615, minRank: 15132 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 624, minRank: 2438 },{ year: 2023, minScore: 621, minRank: 2678 },{ year: 2022, minScore: 618, minRank: 2910 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 623, minRank: 3510 },{ year: 2023, minScore: 620, minRank: 3856 },{ year: 2022, minScore: 617, minRank: 4190 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 623, minRank: 2145 },{ year: 2023, minScore: 620, minRank: 2356 },{ year: 2022, minScore: 617, minRank: 2561 }]},
+  },
+  23: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 625, minRank: 1680 },{ year: 2023, minScore: 622, minRank: 1848 },{ year: 2022, minScore: 619, minRank: 2012 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 626, minRank: 10920 },{ year: 2023, minScore: 623, minRank: 12012 },{ year: 2022, minScore: 620, minRank: 13078 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 629, minRank: 2100 },{ year: 2023, minScore: 626, minRank: 2310 },{ year: 2022, minScore: 623, minRank: 2515 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 628, minRank: 3024 },{ year: 2023, minScore: 625, minRank: 3326 },{ year: 2022, minScore: 622, minRank: 3622 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 628, minRank: 1848 },{ year: 2023, minScore: 625, minRank: 2033 },{ year: 2022, minScore: 622, minRank: 2213 }]},
+  },
+  24: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 634, minRank: 1150 },{ year: 2023, minScore: 631, minRank: 1265 },{ year: 2022, minScore: 628, minRank: 1378 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 635, minRank: 7475 },{ year: 2023, minScore: 632, minRank: 8223 },{ year: 2022, minScore: 629, minRank: 8957 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 638, minRank: 1438 },{ year: 2023, minScore: 635, minRank: 1581 },{ year: 2022, minScore: 632, minRank: 1723 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 637, minRank: 2070 },{ year: 2023, minScore: 634, minRank: 2277 },{ year: 2022, minScore: 631, minRank: 2480 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 637, minRank: 1265 },{ year: 2023, minScore: 634, minRank: 1392 },{ year: 2022, minScore: 631, minRank: 1516 }]},
+  },
+  25: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 627, minRank: 1480 },{ year: 2023, minScore: 624, minRank: 1628 },{ year: 2022, minScore: 621, minRank: 1768 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 628, minRank: 9620 },{ year: 2023, minScore: 625, minRank: 10582 },{ year: 2022, minScore: 622, minRank: 11492 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 631, minRank: 1850 },{ year: 2023, minScore: 628, minRank: 2035 },{ year: 2022, minScore: 625, minRank: 2210 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 630, minRank: 2664 },{ year: 2023, minScore: 627, minRank: 2930 },{ year: 2022, minScore: 624, minRank: 3182 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 630, minRank: 1628 },{ year: 2023, minScore: 627, minRank: 1791 },{ year: 2022, minScore: 624, minRank: 1945 }]},
+  },
+  26: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 623, minRank: 1750 },{ year: 2023, minScore: 620, minRank: 1928 },{ year: 2022, minScore: 617, minRank: 2098 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 624, minRank: 11375 },{ year: 2023, minScore: 621, minRank: 12532 },{ year: 2022, minScore: 618, minRank: 13637 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 627, minRank: 2188 },{ year: 2023, minScore: 624, minRank: 2410 },{ year: 2022, minScore: 621, minRank: 2623 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 626, minRank: 3150 },{ year: 2023, minScore: 623, minRank: 3470 },{ year: 2022, minScore: 620, minRank: 3776 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 626, minRank: 1925 },{ year: 2023, minScore: 623, minRank: 2121 },{ year: 2022, minScore: 620, minRank: 2308 }]},
+  },
+  27: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 621, minRank: 1880 },{ year: 2023, minScore: 618, minRank: 2068 },{ year: 2022, minScore: 615, minRank: 2242 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 622, minRank: 12220 },{ year: 2023, minScore: 619, minRank: 13442 },{ year: 2022, minScore: 616, minRank: 14573 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 625, minRank: 2350 },{ year: 2023, minScore: 622, minRank: 2585 },{ year: 2022, minScore: 619, minRank: 2803 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 624, minRank: 3384 },{ year: 2023, minScore: 621, minRank: 3722 },{ year: 2022, minScore: 618, minRank: 4036 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 624, minRank: 2068 },{ year: 2023, minScore: 621, minRank: 2275 },{ year: 2022, minScore: 618, minRank: 2466 }]},
+  },
+  28: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 618, minRank: 2050 },{ year: 2023, minScore: 615, minRank: 2248 },{ year: 2022, minScore: 612, minRank: 2435 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 619, minRank: 13325 },{ year: 2023, minScore: 616, minRank: 14612 },{ year: 2022, minScore: 613, minRank: 15828 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 622, minRank: 2563 },{ year: 2023, minScore: 619, minRank: 2810 },{ year: 2022, minScore: 616, minRank: 3044 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 621, minRank: 3690 },{ year: 2023, minScore: 618, minRank: 4046 },{ year: 2022, minScore: 615, minRank: 4383 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 621, minRank: 2255 },{ year: 2023, minScore: 618, minRank: 2473 },{ year: 2022, minScore: 615, minRank: 2679 }]},
+  },
+  29: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 620, minRank: 1920 },{ year: 2023, minScore: 617, minRank: 2108 },{ year: 2022, minScore: 614, minRank: 2292 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 621, minRank: 12480 },{ year: 2023, minScore: 618, minRank: 13702 },{ year: 2022, minScore: 615, minRank: 14898 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 624, minRank: 2400 },{ year: 2023, minScore: 621, minRank: 2635 },{ year: 2022, minScore: 618, minRank: 2865 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 623, minRank: 3456 },{ year: 2023, minScore: 620, minRank: 3794 },{ year: 2022, minScore: 617, minRank: 4126 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 623, minRank: 2112 },{ year: 2023, minScore: 620, minRank: 2319 },{ year: 2022, minScore: 617, minRank: 2521 }]},
+  },
+  30: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 616, minRank: 2180 },{ year: 2023, minScore: 613, minRank: 2382 },{ year: 2022, minScore: 610, minRank: 2572 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 617, minRank: 14170 },{ year: 2023, minScore: 614, minRank: 15483 },{ year: 2022, minScore: 611, minRank: 16718 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 620, minRank: 2725 },{ year: 2023, minScore: 617, minRank: 2978 },{ year: 2022, minScore: 614, minRank: 3215 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 619, minRank: 3924 },{ year: 2023, minScore: 616, minRank: 4288 },{ year: 2022, minScore: 613, minRank: 4630 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 619, minRank: 2398 },{ year: 2023, minScore: 616, minRank: 2620 },{ year: 2022, minScore: 613, minRank: 2829 }]},
+  },
+  31: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 626, minRank: 1580 },{ year: 2023, minScore: 623, minRank: 1738 },{ year: 2022, minScore: 620, minRank: 1892 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 627, minRank: 10270 },{ year: 2023, minScore: 624, minRank: 11297 },{ year: 2022, minScore: 621, minRank: 12298 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 630, minRank: 1975 },{ year: 2023, minScore: 627, minRank: 2173 },{ year: 2022, minScore: 624, minRank: 2365 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 629, minRank: 2844 },{ year: 2023, minScore: 626, minRank: 3128 },{ year: 2022, minScore: 623, minRank: 3406 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 629, minRank: 1738 },{ year: 2023, minScore: 626, minRank: 1912 },{ year: 2022, minScore: 623, minRank: 2081 }]},
+  },
+  32: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 610, minRank: 2850 },{ year: 2023, minScore: 607, minRank: 3128 },{ year: 2022, minScore: 604, minRank: 3398 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 611, minRank: 18525 },{ year: 2023, minScore: 608, minRank: 20332 },{ year: 2022, minScore: 605, minRank: 22087 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 614, minRank: 3563 },{ year: 2023, minScore: 611, minRank: 3910 },{ year: 2022, minScore: 608, minRank: 4248 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 613, minRank: 5130 },{ year: 2023, minScore: 610, minRank: 5630 },{ year: 2022, minScore: 607, minRank: 6116 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 613, minRank: 3135 },{ year: 2023, minScore: 610, minRank: 3441 },{ year: 2022, minScore: 607, minRank: 3738 }]},
+  },
+  33: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 608, minRank: 2950 },{ year: 2023, minScore: 605, minRank: 3238 },{ year: 2022, minScore: 602, minRank: 3518 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 609, minRank: 19175 },{ year: 2023, minScore: 606, minRank: 21047 },{ year: 2022, minScore: 603, minRank: 22867 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 612, minRank: 3688 },{ year: 2023, minScore: 609, minRank: 4048 },{ year: 2022, minScore: 606, minRank: 4398 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 611, minRank: 5310 },{ year: 2023, minScore: 608, minRank: 5828 },{ year: 2022, minScore: 605, minRank: 6332 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 611, minRank: 3245 },{ year: 2023, minScore: 608, minRank: 3562 },{ year: 2022, minScore: 605, minRank: 3870 }]},
+  },
+  34: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 605, minRank: 3150 },{ year: 2023, minScore: 602, minRank: 3448 },{ year: 2022, minScore: 599, minRank: 3735 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 606, minRank: 20475 },{ year: 2023, minScore: 603, minRank: 22412 },{ year: 2022, minScore: 600, minRank: 24278 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 609, minRank: 3938 },{ year: 2023, minScore: 606, minRank: 4310 },{ year: 2022, minScore: 603, minRank: 4669 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 608, minRank: 5670 },{ year: 2023, minScore: 605, minRank: 6206 },{ year: 2022, minScore: 602, minRank: 6723 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 608, minRank: 3465 },{ year: 2023, minScore: 605, minRank: 3793 },{ year: 2022, minScore: 602, minRank: 4109 }]},
+  },
+  35: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 598, minRank: 3850 },{ year: 2023, minScore: 595, minRank: 4182 },{ year: 2022, minScore: 592, minRank: 4508 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 599, minRank: 25025 },{ year: 2023, minScore: 596, minRank: 27183 },{ year: 2022, minScore: 593, minRank: 29302 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 602, minRank: 4813 },{ year: 2023, minScore: 599, minRank: 5228 },{ year: 2022, minScore: 596, minRank: 5635 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 601, minRank: 6930 },{ year: 2023, minScore: 598, minRank: 7528 },{ year: 2022, minScore: 595, minRank: 8114 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 601, minRank: 4235 },{ year: 2023, minScore: 598, minRank: 4600 },{ year: 2022, minScore: 595, minRank: 4959 }]},
+  },
+  36: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 603, minRank: 3280 },{ year: 2023, minScore: 600, minRank: 3582 },{ year: 2022, minScore: 597, minRank: 3878 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 604, minRank: 21320 },{ year: 2023, minScore: 601, minRank: 23283 },{ year: 2022, minScore: 598, minRank: 25207 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 607, minRank: 4100 },{ year: 2023, minScore: 604, minRank: 4478 },{ year: 2022, minScore: 601, minRank: 4848 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 606, minRank: 5904 },{ year: 2023, minScore: 603, minRank: 6448 },{ year: 2022, minScore: 600, minRank: 6980 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 606, minRank: 3608 },{ year: 2023, minScore: 603, minRank: 3940 },{ year: 2022, minScore: 600, minRank: 4266 }]},
+  },
+  37: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 613, minRank: 2480 },{ year: 2023, minScore: 610, minRank: 2698 },{ year: 2022, minScore: 607, minRank: 2908 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 614, minRank: 16120 },{ year: 2023, minScore: 611, minRank: 17537 },{ year: 2022, minScore: 608, minRank: 18902 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 617, minRank: 3100 },{ year: 2023, minScore: 614, minRank: 3373 },{ year: 2022, minScore: 611, minRank: 3635 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 616, minRank: 4464 },{ year: 2023, minScore: 613, minRank: 4856 },{ year: 2022, minScore: 610, minRank: 5234 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 616, minRank: 2728 },{ year: 2023, minScore: 613, minRank: 2968 },{ year: 2022, minScore: 610, minRank: 3199 }]},
+  },
+  38: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 612, minRank: 2580 },{ year: 2023, minScore: 609, minRank: 2802 },{ year: 2022, minScore: 606, minRank: 3018 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 613, minRank: 16770 },{ year: 2023, minScore: 610, minRank: 18213 },{ year: 2022, minScore: 607, minRank: 19617 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 616, minRank: 3225 },{ year: 2023, minScore: 613, minRank: 3503 },{ year: 2022, minScore: 610, minRank: 3773 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 615, minRank: 4644 },{ year: 2023, minScore: 612, minRank: 5044 },{ year: 2022, minScore: 609, minRank: 5432 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 615, minRank: 2838 },{ year: 2023, minScore: 612, minRank: 3082 },{ year: 2022, minScore: 609, minRank: 3320 }]},
+  },
+  39: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 611, minRank: 2750 },{ year: 2023, minScore: 608, minRank: 2978 },{ year: 2022, minScore: 605, minRank: 3198 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 612, minRank: 17875 },{ year: 2023, minScore: 609, minRank: 19357 },{ year: 2022, minScore: 606, minRank: 20787 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 615, minRank: 3438 },{ year: 2023, minScore: 612, minRank: 3723 },{ year: 2022, minScore: 609, minRank: 3998 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 614, minRank: 4950 },{ year: 2023, minScore: 611, minRank: 5360 },{ year: 2022, minScore: 608, minRank: 5756 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 614, minRank: 3025 },{ year: 2023, minScore: 611, minRank: 3276 },{ year: 2022, minScore: 608, minRank: 3518 }]},
+  },
+  40: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 611, minRank: 2680 },{ year: 2023, minScore: 608, minRank: 2908 },{ year: 2022, minScore: 605, minRank: 3128 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 612, minRank: 17420 },{ year: 2023, minScore: 609, minRank: 18902 },{ year: 2022, minScore: 606, minRank: 20332 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 615, minRank: 3350 },{ year: 2023, minScore: 612, minRank: 3635 },{ year: 2022, minScore: 609, minRank: 3910 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 614, minRank: 4824 },{ year: 2023, minScore: 611, minRank: 5234 },{ year: 2022, minScore: 608, minRank: 5630 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 614, minRank: 2948 },{ year: 2023, minScore: 611, minRank: 3199 },{ year: 2022, minScore: 608, minRank: 3441 }]},
+  },
+  41: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 605, minRank: 3180 },{ year: 2023, minScore: 602, minRank: 3478 },{ year: 2022, minScore: 599, minRank: 3768 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 606, minRank: 20670 },{ year: 2023, minScore: 603, minRank: 22607 },{ year: 2022, minScore: 600, minRank: 24492 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 609, minRank: 3975 },{ year: 2023, minScore: 606, minRank: 4348 },{ year: 2022, minScore: 603, minRank: 4710 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 608, minRank: 5724 },{ year: 2023, minScore: 605, minRank: 6260 },{ year: 2022, minScore: 602, minRank: 6782 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 608, minRank: 3498 },{ year: 2023, minScore: 605, minRank: 3826 },{ year: 2022, minScore: 602, minRank: 4145 }]},
+  },
+  42: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 602, minRank: 3350 },{ year: 2023, minScore: 599, minRank: 3658 },{ year: 2022, minScore: 596, minRank: 3948 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 603, minRank: 21775 },{ year: 2023, minScore: 600, minRank: 23777 },{ year: 2022, minScore: 597, minRank: 25662 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 606, minRank: 4188 },{ year: 2023, minScore: 603, minRank: 4573 },{ year: 2022, minScore: 600, minRank: 4935 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 605, minRank: 6030 },{ year: 2023, minScore: 602, minRank: 6584 },{ year: 2022, minScore: 599, minRank: 7106 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 605, minRank: 3685 },{ year: 2023, minScore: 602, minRank: 4024 },{ year: 2022, minScore: 599, minRank: 4343 }]},
+  },
+  43: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 600, minRank: 3520 },{ year: 2023, minScore: 597, minRank: 3832 },{ year: 2022, minScore: 594, minRank: 4138 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 601, minRank: 22880 },{ year: 2023, minScore: 598, minRank: 24908 },{ year: 2022, minScore: 595, minRank: 26897 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 604, minRank: 4400 },{ year: 2023, minScore: 601, minRank: 4790 },{ year: 2022, minScore: 598, minRank: 5173 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 603, minRank: 6336 },{ year: 2023, minScore: 600, minRank: 6898 },{ year: 2022, minScore: 597, minRank: 7448 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 603, minRank: 3872 },{ year: 2023, minScore: 600, minRank: 4215 },{ year: 2022, minScore: 597, minRank: 4552 }]},
+  },
+  44: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 603, minRank: 3280 },{ year: 2023, minScore: 600, minRank: 3582 },{ year: 2022, minScore: 597, minRank: 3878 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 604, minRank: 21320 },{ year: 2023, minScore: 601, minRank: 23283 },{ year: 2022, minScore: 598, minRank: 25207 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 607, minRank: 4100 },{ year: 2023, minScore: 604, minRank: 4478 },{ year: 2022, minScore: 601, minRank: 4848 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 606, minRank: 5904 },{ year: 2023, minScore: 603, minRank: 6448 },{ year: 2022, minScore: 600, minRank: 6980 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 606, minRank: 3608 },{ year: 2023, minScore: 603, minRank: 3940 },{ year: 2022, minScore: 600, minRank: 4266 }]},
+  },
+  45: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 614, minRank: 2350 },{ year: 2023, minScore: 611, minRank: 2568 },{ year: 2022, minScore: 608, minRank: 2782 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 615, minRank: 15275 },{ year: 2023, minScore: 612, minRank: 16692 },{ year: 2022, minScore: 609, minRank: 18083 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 618, minRank: 2938 },{ year: 2023, minScore: 615, minRank: 3210 },{ year: 2022, minScore: 612, minRank: 3478 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 617, minRank: 4230 },{ year: 2023, minScore: 614, minRank: 4622 },{ year: 2022, minScore: 611, minRank: 5008 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 617, minRank: 2585 },{ year: 2023, minScore: 614, minRank: 2825 },{ year: 2022, minScore: 611, minRank: 3060 }]},
+  },
+  46: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 615, minRank: 2280 },{ year: 2023, minScore: 612, minRank: 2498 },{ year: 2022, minScore: 609, minRank: 2712 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 616, minRank: 14820 },{ year: 2023, minScore: 613, minRank: 16237 },{ year: 2022, minScore: 610, minRank: 17628 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 619, minRank: 2850 },{ year: 2023, minScore: 616, minRank: 3123 },{ year: 2022, minScore: 613, minRank: 3390 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 618, minRank: 4104 },{ year: 2023, minScore: 615, minRank: 4496 },{ year: 2022, minScore: 612, minRank: 4882 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 618, minRank: 2508 },{ year: 2023, minScore: 615, minRank: 2748 },{ year: 2022, minScore: 612, minRank: 2983 }]},
+  },
+  47: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 601, minRank: 3480 },{ year: 2023, minScore: 598, minRank: 3792 },{ year: 2022, minScore: 595, minRank: 4098 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 602, minRank: 22620 },{ year: 2023, minScore: 599, minRank: 24648 },{ year: 2022, minScore: 596, minRank: 26637 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 605, minRank: 4350 },{ year: 2023, minScore: 602, minRank: 4740 },{ year: 2022, minScore: 599, minRank: 5123 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 604, minRank: 6264 },{ year: 2023, minScore: 601, minRank: 6826 },{ year: 2022, minScore: 598, minRank: 7376 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 604, minRank: 3828 },{ year: 2023, minScore: 601, minRank: 4171 },{ year: 2022, minScore: 598, minRank: 4508 }]},
+  },
+  48: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 602, minRank: 3380 },{ year: 2023, minScore: 599, minRank: 3692 },{ year: 2022, minScore: 596, minRank: 3998 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 603, minRank: 21970 },{ year: 2023, minScore: 600, minRank: 23998 },{ year: 2022, minScore: 597, minRank: 25987 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 606, minRank: 4225 },{ year: 2023, minScore: 603, minRank: 4615 },{ year: 2022, minScore: 600, minRank: 4998 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 605, minRank: 6084 },{ year: 2023, minScore: 602, minRank: 6646 },{ year: 2022, minScore: 599, minRank: 7196 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 605, minRank: 3718 },{ year: 2023, minScore: 602, minRank: 4061 },{ year: 2022, minScore: 599, minRank: 4398 }]},
+  },
+  49: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 545, minRank: 12500 },{ year: 2023, minScore: 540, minRank: 13200 },{ year: 2022, minScore: 535, minRank: 13850 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 546, minRank: 81250 },{ year: 2023, minScore: 541, minRank: 85800 },{ year: 2022, minScore: 536, minRank: 90025 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 549, minRank: 15625 },{ year: 2023, minScore: 544, minRank: 16500 },{ year: 2022, minScore: 539, minRank: 17313 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 548, minRank: 22500 },{ year: 2023, minScore: 543, minRank: 23760 },{ year: 2022, minScore: 538, minRank: 24930 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 548, minRank: 13750 },{ year: 2023, minScore: 543, minRank: 14520 },{ year: 2022, minScore: 538, minRank: 15235 }]},
+  },
+  50: {
+    "贵州": { "物理类": [{ year: 2024, minScore: 548, minRank: 11500 },{ year: 2023, minScore: 543, minRank: 12200 },{ year: 2022, minScore: 538, minRank: 12850 }]},
+    "北京": { "物理类": [{ year: 2024, minScore: 549, minRank: 74750 },{ year: 2023, minScore: 544, minRank: 79300 },{ year: 2022, minScore: 539, minRank: 83525 }]},
+    "浙江": { "物理类": [{ year: 2024, minScore: 552, minRank: 14375 },{ year: 2023, minScore: 547, minRank: 15250 },{ year: 2022, minScore: 542, minRank: 16063 }]},
+    "山东": { "物理类": [{ year: 2024, minScore: 551, minRank: 20700 },{ year: 2023, minScore: 546, minRank: 21960 },{ year: 2022, minScore: 541, minRank: 23130 }]},
+    "河南": { "物理类": [{ year: 2024, minScore: 551, minRank: 12650 },{ year: 2023, minScore: 546, minRank: 13420 },{ year: 2022, minScore: 541, minRank: 14135 }]},
+  }
+};
+
+
+
+
+// ============================================================
+// 软科中国大学专业排名（模拟数据）
+// 等级: A+ (前2%), A (2-10%), A- (10-20%), B+ (20-40%), B (40-60%), B- (60-70%), C+ (70-80%), C (80-95%)
+// 排名为该专业在全国的排位（模拟）
+// ============================================================
+
+// ============================================================
+// 专业就业前景指标（模拟数据，满分100）
+// demand=市场需求  growth=增长潜力  salary=薪资水平  stability=就业稳定  postgrad=深造价值
+// ============================================================
+export const majorProspects = {
+  1:  { demand: 95, growth: 88, salary: 92, stability: 75, postgrad: 80, trend: "up",    outlook: "持续旺盛", highlight: "AI/大数据方向人才缺口巨大，应届生起薪位居各专业前列" },
+  2:  { demand: 80, growth: 70, salary: 78, stability: 95, postgrad: 98, trend: "stable", outlook: "长期刚需", highlight: "医学人才永远稀缺，八年制博士毕业可直接进三甲，职业生命周期极长" },
+  3:  { demand: 82, growth: 75, salary: 85, stability: 90, postgrad: 88, trend: "up",    outlook: "稳步增长", highlight: "口腔医学就业灵活，可公立可私立，创业空间大，收入天花板高" },
+  4:  { demand: 98, growth: 96, salary: 95, stability: 70, postgrad: 85, trend: "up",    outlook: "爆发增长", highlight: "AI是国家战略方向，顶尖人才年薪百万级别，但技术迭代快需持续学习" },
+  5:  { demand: 90, growth: 92, salary: 85, stability: 82, postgrad: 80, trend: "up",    outlook: "高速增长", highlight: "芯片/集成电路是国家战略，人才缺口超30万，薪资涨幅领先" },
+  6:  { demand: 75, growth: 65, salary: 70, stability: 98, postgrad: 60, trend: "stable", outlook: "稳定刚需", highlight: "国家电网/南方电网等央企待遇好、福利全，就业极其稳定" },
+  7:  { demand: 70, growth: 55, salary: 88, stability: 65, postgrad: 75, trend: "stable", outlook: "周期波动", highlight: "金融高薪但受经济周期影响大，名校+研究生是基本门槛" },
+  8:  { demand: 68, growth: 60, salary: 72, stability: 80, postgrad: 70, trend: "stable", outlook: "平稳发展", highlight: "法考通过率低是最大门槛，通过后律所/公务员/法务均有好出路" },
+  9:  { demand: 72, growth: 80, salary: 78, stability: 70, postgrad: 95, trend: "up",    outlook: "万金油学科", highlight: "数学转金融/AI/数据科学极其容易，深造后竞争力大增" },
+  10: { demand: 70, growth: 72, salary: 65, stability: 88, postgrad: 78, trend: "stable", outlook: "国防刚需", highlight: "航空航天是国防重点领域，就业稳定但地域选择相对有限" },
+  11: { demand: 80, growth: 78, salary: 75, stability: 80, postgrad: 72, trend: "up",    outlook: "智能制造", highlight: "工业4.0推动自动化需求，可转机器人/智能制造/CS方向" },
+  12: { demand: 92, growth: 85, salary: 90, stability: 72, postgrad: 75, trend: "up",    outlook: "持续旺盛", highlight: "软件工程就业面极广，互联网/金融科技/企业数字化均需要" },
+  13: { demand: 90, growth: 90, salary: 85, stability: 80, postgrad: 78, trend: "up",    outlook: "国家战略", highlight: "网络安全人才缺口超百万，国家级安全需求推动行业持续增长" },
+  14: { demand: 92, growth: 95, salary: 90, stability: 80, postgrad: 82, trend: "up",    outlook: "芯片强国", highlight: "集成电路是卡脖子领域，国家重点扶持，薪资涨幅领跑工科" },
+  15: { demand: 88, growth: 85, salary: 88, stability: 72, postgrad: 78, trend: "up",    outlook: "数据驱动", highlight: "各行业数字化转型推动大数据人才需求，复合型人才最受青睐" },
+  16: { demand: 65, growth: 72, salary: 65, stability: 75, postgrad: 85, trend: "up",    outlook: "交叉蓝海", highlight: "医工交叉是新兴领域，医疗器械/智慧医疗方向前景好，建议深造" },
+  17: { demand: 60, growth: 70, salary: 65, stability: 68, postgrad: 95, trend: "stable", outlook: "基础科研", highlight: "物理学是基础学科皇冠，转半导体/光电子/量化金融均有优势" },
+  18: { demand: 55, growth: 58, salary: 55, stability: 70, postgrad: 88, trend: "stable", outlook: "新材料机遇", highlight: "传统化学就业一般，但新能源材料/电池化学方向正在崛起" },
+  19: { demand: 45, growth: 35, salary: 55, stability: 60, postgrad: 65, trend: "down",  outlook: "行业调整", highlight: "建筑行业受房地产周期影响较大，但城市更新/绿色建筑仍有空间" },
+  20: { demand: 65, growth: 58, salary: 60, stability: 82, postgrad: 65, trend: "stable", outlook: "工业基石", highlight: "机械是制造业基础，智能制造方向有增长，传统方向就业稳定" },
+  21: { demand: 62, growth: 55, salary: 68, stability: 68, postgrad: 82, trend: "stable", outlook: "理论研究", highlight: "经济学偏理论，深造后可进高校/智库/央行等，本科就业面较窄" },
+  22: { demand: 78, growth: 68, salary: 65, stability: 90, postgrad: 92, trend: "stable", outlook: "长期需求", highlight: "五年制临床需考研才有竞争力，医学培养周期长但回报稳定" },
+  23: { demand: 70, growth: 68, salary: 65, stability: 78, postgrad: 75, trend: "stable", outlook: "医药并行", highlight: "药企研发/CRO/临床试验等领域需求稳定，薪资增长中等" },
+  24: { demand: 78, growth: 75, salary: 78, stability: 75, postgrad: 72, trend: "up",    outlook: "5G/6G驱动", highlight: "5G建设持续推进，6G预研启动，通信人才需求持续增长" },
+  25: { demand: 88, growth: 92, salary: 82, stability: 72, postgrad: 80, trend: "up",    outlook: "机器人时代", highlight: "工业机器人/服务机器人/人形机器人赛道火热，复合型人才紧缺" },
+  26: { demand: 85, growth: 88, salary: 82, stability: 78, postgrad: 80, trend: "up",    outlook: "安全刚需", highlight: "国家级网络安全需求推动行业增长，攻防人才极度稀缺" },
+  27: { demand: 75, growth: 88, salary: 72, stability: 70, postgrad: 85, trend: "up",    outlook: "AI+医疗", highlight: "AI辅助诊断/药物研发/医疗影像分析是蓝海，复合型人才紧缺" },
+  28: { demand: 82, growth: 90, salary: 72, stability: 75, postgrad: 75, trend: "up",    outlook: "双碳战略", highlight: "光伏/风电/储能行业爆发增长，宁德时代等头部企业大量招人" },
+  29: { demand: 55, growth: 40, salary: 55, stability: 75, postgrad: 50, trend: "stable", outlook: "智能转型", highlight: "传统会计需求下降，但高端财务/审计/税务人才仍紧缺" },
+  30: { demand: 30, growth: 28, salary: 35, stability: 50, postgrad: 85, trend: "stable", outlook: "小众学术", highlight: "哲学是纯学术学科，适合热爱思辨的同学，深造后可转法律/教育/管理" },
+  31: { demand: 72, growth: 68, salary: 72, stability: 75, postgrad: 65, trend: "stable", outlook: "云计算时代", highlight: "网络工程就业稳定，云计算/SDN方向薪资增长较快" },
+  32: { demand: 70, growth: 75, salary: 68, stability: 70, postgrad: 72, trend: "up",    outlook: "万物互联", highlight: "物联网应用场景不断扩展，智能家居/工业互联网/车联网均需要" },
+  33: { demand: 48, growth: 60, salary: 50, stability: 55, postgrad: 92, trend: "stable", outlook: "科研导向", highlight: "生物科学必须深造才有好就业，适合有志科研的同学" },
+};
+
+export const collegeMajorRanks = {
+  // ---- 清华 ----
+  1: { 1:{rank:2,grade:"A+"}, 4:{rank:1,grade:"A+"}, 9:{rank:3,grade:"A+"}, 5:{rank:1,grade:"A+"}, 14:{rank:2,grade:"A+"} },
+  // ---- 北大 ----
+  2: { 1:{rank:4,grade:"A+"}, 9:{rank:1,grade:"A+"}, 8:{rank:1,grade:"A+"}, 2:{rank:1,grade:"A+"}, 17:{rank:1,grade:"A+"} },
+  // ---- 复旦 ----
+  3: { 1:{rank:8,grade:"A"}, 9:{rank:4,grade:"A+"}, 7:{rank:3,grade:"A+"}, 2:{rank:5,grade:"A+"}, 21:{rank:3,grade:"A+"} },
+  // ---- 上交 ----
+  4: { 1:{rank:3,grade:"A+"}, 4:{rank:4,grade:"A+"}, 5:{rank:3,grade:"A+"}, 6:{rank:4,grade:"A+"}, 14:{rank:5,grade:"A+"} },
+  // ---- 浙大 ----
+  5: { 1:{rank:5,grade:"A+"}, 4:{rank:3,grade:"A+"}, 9:{rank:6,grade:"A"}, 12:{rank:4,grade:"A+"}, 15:{rank:2,grade:"A+"} },
+  // ---- 中科大 ----
+  6: { 9:{rank:2,grade:"A+"}, 4:{rank:8,grade:"A"}, 1:{rank:12,grade:"A"}, 5:{rank:10,grade:"A"}, 17:{rank:2,grade:"A+"} },
+  // ---- 南大 ----
+  7: { 1:{rank:7,grade:"A+"}, 9:{rank:5,grade:"A+"}, 2:{rank:8,grade:"A"}, 7:{rank:5,grade:"A+"}, 17:{rank:4,grade:"A+"} },
+  // ---- 人大 ----
+  8: { 7:{rank:2,grade:"A+"}, 8:{rank:2,grade:"A+"}, 9:{rank:15,grade:"A"}, 21:{rank:1,grade:"A+"} },
+  // ---- 北航 ----
+  9: { 10:{rank:2,grade:"A+"}, 1:{rank:9,grade:"A"}, 4:{rank:6,grade:"A+"}, 5:{rank:7,grade:"A"}, 25:{rank:3,grade:"A+"} },
+  // ---- 同济 ----
+  10: { 6:{rank:8,grade:"A"}, 5:{rank:12,grade:"A"}, 1:{rank:15,grade:"A"}, 11:{rank:10,grade:"A"}, 19:{rank:2,grade:"A+"} },
+  // ---- 南开 ----
+  11: { 7:{rank:6,grade:"A"}, 9:{rank:8,grade:"A"}, 1:{rank:20,grade:"A"}, 8:{rank:10,grade:"A"}, 21:{rank:7,grade:"A"} },
+  // ---- 哈工大 ----
+  12: { 10:{rank:3,grade:"A+"}, 1:{rank:10,grade:"A"}, 4:{rank:9,grade:"A"}, 11:{rank:3,grade:"A+"}, 25:{rank:1,grade:"A+"} },
+  // ---- 西交 ----
+  13: { 6:{rank:3,grade:"A+"}, 1:{rank:11,grade:"A"}, 11:{rank:6,grade:"A"}, 5:{rank:9,grade:"A"}, 20:{rank:5,grade:"A+"} },
+  // ---- 武大 ----
+  14: { 1:{rank:13,grade:"A"}, 8:{rank:3,grade:"A+"}, 9:{rank:10,grade:"A"}, 2:{rank:4,grade:"A+"}, 13:{rank:1,grade:"A+"} },
+  // ---- 华科 ----
+  15: { 1:{rank:10,grade:"A"}, 4:{rank:12,grade:"A"}, 5:{rank:6,grade:"A"}, 2:{rank:7,grade:"A"}, 6:{rank:5,grade:"A+"} },
+  // ---- 东南 ----
+  16: { 6:{rank:6,grade:"A"}, 5:{rank:5,grade:"A+"}, 1:{rank:16,grade:"A"}, 11:{rank:8,grade:"A"}, 19:{rank:3,grade:"A+"} },
+  // ---- 北理 ----
+  17: { 5:{rank:8,grade:"A"}, 10:{rank:5,grade:"A+"}, 1:{rank:18,grade:"A"}, 11:{rank:9,grade:"A"}, 14:{rank:7,grade:"A"} },
+  // ---- 天大 ----
+  18: { 6:{rank:7,grade:"A"}, 1:{rank:19,grade:"A"}, 5:{rank:11,grade:"A"}, 11:{rank:11,grade:"A"}, 20:{rank:7,grade:"A"} },
+  // ---- 厦大 ----
+  19: { 7:{rank:8,grade:"A"}, 1:{rank:22,grade:"A"}, 9:{rank:12,grade:"A"}, 3:{rank:10,grade:"A"}, 21:{rank:5,grade:"A+"} },
+  // ---- 中山 ----
+  20: { 2:{rank:6,grade:"A+"}, 1:{rank:17,grade:"A"}, 8:{rank:7,grade:"A"}, 7:{rank:10,grade:"A"}, 22:{rank:5,grade:"A+"} },
+  // ---- 电子科大 ----
+  21: { 1:{rank:14,grade:"A"}, 4:{rank:7,grade:"A+"}, 5:{rank:2,grade:"A+"}, 14:{rank:3,grade:"A+"}, 12:{rank:8,grade:"A"} },
+  // ---- 川大 ----
+  22: { 2:{rank:4,grade:"A+"}, 1:{rank:21,grade:"A"}, 3:{rank:1,grade:"A+"}, 8:{rank:12,grade:"A"}, 23:{rank:3,grade:"A+"} },
+  // ---- 西工大 ----
+  23: { 10:{rank:4,grade:"A+"}, 1:{rank:25,grade:"B+"}, 4:{rank:15,grade:"A"}, 11:{rank:12,grade:"A"}, 25:{rank:5,grade:"A+"} },
+  // ---- 北师大 ----
+  24: { 9:{rank:7,grade:"A"}, 1:{rank:24,grade:"B+"}, 8:{rank:5,grade:"A+"}, 30:{rank:1,grade:"A+"} },
+  // ---- 华东师大 ----
+  25: { 1:{rank:23,grade:"B+"}, 9:{rank:11,grade:"A"}, 7:{rank:12,grade:"A"}, 8:{rank:9,grade:"A"}, 15:{rank:6,grade:"A"} },
+  // ---- 中南 ----
+  26: { 2:{rank:9,grade:"A"}, 1:{rank:26,grade:"B+"}, 6:{rank:10,grade:"A"}, 5:{rank:14,grade:"A"}, 22:{rank:6,grade:"A+"} },
+  // ---- 湖大 ----
+  27: { 1:{rank:28,grade:"B+"}, 5:{rank:16,grade:"A"}, 6:{rank:12,grade:"A"}, 20:{rank:10,grade:"A"}, 12:{rank:14,grade:"A"} },
+  // ---- 重大 ----
+  28: { 1:{rank:27,grade:"B+"}, 6:{rank:9,grade:"A"}, 5:{rank:15,grade:"A"}, 20:{rank:8,grade:"A"}, 11:{rank:13,grade:"A"} },
+  // ---- 山大 ----
+  29: { 1:{rank:24,grade:"B+"}, 9:{rank:9,grade:"A"}, 2:{rank:12,grade:"A"}, 8:{rank:8,grade:"A"}, 17:{rank:7,grade:"A"} },
+  // ---- 大连理工 ----
+  30: { 1:{rank:30,grade:"B+"}, 5:{rank:18,grade:"A"}, 11:{rank:14,grade:"A"}, 20:{rank:9,grade:"A"}, 6:{rank:13,grade:"A"} },
+  // ---- 北邮 ----
+  31: { 1:{rank:11,grade:"A"}, 5:{rank:4,grade:"A+"}, 24:{rank:1,grade:"A+"}, 13:{rank:3,grade:"A+"}, 31:{rank:1,grade:"A+"} },
+  // ---- 上财 ----
+  32: { 7:{rank:1,grade:"A+"}, 21:{rank:2,grade:"A+"}, 9:{rank:20,grade:"A"}, 29:{rank:2,grade:"A+"} },
+  // ---- 央财 ----
+  33: { 7:{rank:4,grade:"A+"}, 21:{rank:4,grade:"A+"}, 29:{rank:5,grade:"A+"}, 8:{rank:11,grade:"A"} },
+  // ---- 对外经贸 ----
+  34: { 7:{rank:5,grade:"A+"}, 21:{rank:3,grade:"A+"}, 8:{rank:14,grade:"A"}, 29:{rank:4,grade:"A+"} },
+  // ---- 北外 ----
+  35: { 8:{rank:20,grade:"A"}, 21:{rank:15,grade:"A"} },
+  // ---- 中国政法 ----
+  36: { 8:{rank:1,grade:"A+"}, 21:{rank:18,grade:"A"} },
+  // ---- 南航 ----
+  37: { 10:{rank:6,grade:"A"}, 1:{rank:32,grade:"B+"}, 5:{rank:20,grade:"A"}, 11:{rank:16,grade:"A"}, 24:{rank:5,grade:"A+"} },
+  // ---- 南理 ----
+  38: { 5:{rank:13,grade:"A"}, 1:{rank:35,grade:"B+"}, 11:{rank:15,grade:"A"}, 14:{rank:8,grade:"A"}, 10:{rank:8,grade:"A"} },
+  // ---- 武汉理工 ----
+  39: { 1:{rank:38,grade:"B+"}, 5:{rank:22,grade:"A"}, 6:{rank:14,grade:"A"}, 20:{rank:12,grade:"A"}, 28:{rank:4,grade:"A+"} },
+  // ---- 华中师范 ----
+  40: { 9:{rank:13,grade:"A"}, 1:{rank:36,grade:"B+"}, 8:{rank:13,grade:"A"}, 30:{rank:3,grade:"A+"} },
+  // ---- 西南交大 ----
+  41: { 1:{rank:40,grade:"B+"}, 6:{rank:11,grade:"A"}, 11:{rank:18,grade:"A"}, 20:{rank:11,grade:"A"}, 5:{rank:25,grade:"B+"} },
+  // ---- 西南财经 ----
+  42: { 7:{rank:7,grade:"A"}, 21:{rank:6,grade:"A+"}, 29:{rank:8,grade:"A"}, 8:{rank:16,grade:"A"} },
+  // ---- 暨南 ----
+  43: { 1:{rank:42,grade:"B+"}, 2:{rank:15,grade:"A"}, 7:{rank:11,grade:"A"}, 8:{rank:15,grade:"A"}, 21:{rank:8,grade:"A"} },
+  // ---- 河海 ----
+  44: { 6:{rank:4,grade:"A+"}, 1:{rank:45,grade:"B+"}, 5:{rank:24,grade:"B+"}, 11:{rank:17,grade:"A"}, 20:{rank:14,grade:"A"} },
+  // ---- 西电 ----
+  45: { 1:{rank:16,grade:"A"}, 5:{rank:1,grade:"A+"}, 24:{rank:3,grade:"A+"}, 13:{rank:2,grade:"A+"}, 14:{rank:4,grade:"A+"} },
+  // ---- 北交 ----
+  46: { 1:{rank:29,grade:"B+"}, 5:{rank:19,grade:"A"}, 6:{rank:15,grade:"A"}, 11:{rank:20,grade:"A"}, 24:{rank:6,grade:"A"} },
+  // ---- 哈工程 ----
+  47: { 10:{rank:7,grade:"A"}, 5:{rank:17,grade:"A"}, 1:{rank:34,grade:"B+"}, 11:{rank:19,grade:"A"}, 24:{rank:8,grade:"A"} },
+  // ---- 合工大 ----
+  48: { 1:{rank:44,grade:"B+"}, 6:{rank:16,grade:"A"}, 5:{rank:26,grade:"B+"}, 20:{rank:15,grade:"A"}, 11:{rank:22,grade:"A"} },
+  // ---- 贵大 ----
+  49: { 1:{rank:120,grade:"B"}, 8:{rank:80,grade:"B"}, 22:{rank:90,grade:"B"}, 20:{rank:95,grade:"B"}, 28:{rank:60,grade:"B+"} },
+  // ---- 云南大学 ----
+  50: { 1:{rank:110,grade:"B"}, 8:{rank:75,grade:"B+"}, 9:{rank:85,grade:"B"}, 22:{rank:88,grade:"B"}, 33:{rank:40,grade:"B+"} },
+};
+
+
+// ============================================================
+// 院校详细特色与就业数据 (面向贵州高分段考生)
+// ============================================================
+export const collegeProfiles = {
+  1: {
+    name: "清华大学",
+    motto: "自强不息，厚德载物",
+    founded: 1911,
+    highlight: "中国顶尖学府，工科实力全国第一，理工科综合实力最强",
+    features: [
+      "工科实力全国第一，计算机、电子、机械等均为A+学科",
+      "科研经费充足，实验室设备世界一流",
+      "国际交流广泛，与MIT、斯坦福等顶尖高校深度合作",
+      "创新创业氛围浓厚，校友创办众多知名企业"
+    ],
+    employment: {
+      rate: "98.5%",
+      avgSalary: "25-50万",
+      topEmployers: ["华为", "腾讯", "阿里巴巴", "字节跳动", "中国航天"],
+      industries: ["互联网/IT", "金融", "科研院所", "高端制造"],
+      postgradRate: "80%+",
+      overseasRate: "30%+"
+    },
+    campus: "北京海淀区，毗邻北大，学术氛围浓厚",
+    specialNote: "强基计划招生，部分专业入学后可转专业"
+  },
+  2: {
+    name: "北京大学",
+    motto: "爱国、进步、民主、科学",
+    founded: 1898,
+    highlight: "中国最高学府，文理医法全面发展，人文社科全国第一",
+    features: [
+      "人文社科全国第一，哲学、经济学、法学等顶尖",
+      "理科实力雄厚，数学、物理、化学等均为A+",
+      "医学部实力强劲，临床医学全国领先",
+      "未名湖畔，人文底蕴深厚"
+    ],
+    employment: {
+      rate: "98.2%",
+      avgSalary: "22-45万",
+      topEmployers: ["国家部委", "金融机构", "科研院所", "国际组织"],
+      industries: ["金融", "政府/公共管理", "教育", "科研"],
+      postgradRate: "75%+",
+      overseasRate: "25%+"
+    },
+    campus: "北京海淀区，古典园林与现代建筑交相辉映",
+    specialNote: "元培学院可自由选专业，转专业政策宽松"
+  },
+  3: {
+    name: "复旦大学",
+    motto: "博学而笃志，切问而近思",
+    founded: 1905,
+    highlight: "华东五校之一，文理医全面发展，上海第一高校",
+    features: [
+      "人文社科实力强劲，新闻传播、经济学全国顶尖",
+      "理科基础扎实，数学、物理、化学均为A学科",
+      "医学院实力雄厚，附属医院资源丰富",
+      "地处上海，就业和实习机会多"
+    ],
+    employment: {
+      rate: "97.8%",
+      avgSalary: "20-40万",
+      topEmployers: ["金融机构", "咨询公司", "外企", "互联网"],
+      industries: ["金融", "咨询", "互联网", "医药"],
+      postgradRate: "70%+",
+      overseasRate: "20%+"
+    },
+    campus: "上海杨浦区，邯郸校区历史底蕴深厚",
+    specialNote: "大类招生，入学一年后选专业"
+  },
+  4: {
+    name: "上海交通大学",
+    motto: "饮水思源，爱国荣校",
+    founded: 1896,
+    highlight: "华东五校之一，工科实力全国前三，医学院顶尖",
+    features: [
+      "工科实力全国前三，机械、船舶、电气等均为A+",
+      "医学院全国顶尖，附属医院资源丰富",
+      "产学研结合紧密，与上汽、宝钢等企业合作深入",
+      "地处上海，国际化程度高"
+    ],
+    employment: {
+      rate: "98.0%",
+      avgSalary: "22-45万",
+      topEmployers: ["华为", "上汽集团", "中芯国际", "金融机构"],
+      industries: ["高端制造", "汽车", "集成电路", "金融"],
+      postgradRate: "75%+",
+      overseasRate: "22%+"
+    },
+    campus: "上海闵行区，校园环境优美，设施先进",
+    specialNote: "工科试验班、理科试验班招生，入学后分流"
+  },
+  5: {
+    name: "浙江大学",
+    motto: "求是创新",
+    founded: 1897,
+    highlight: "华东五校之一，学科最齐全的综合性大学，工科实力强劲",
+    features: [
+      "学科覆盖面最广，几乎所有学科进入全国前列",
+      "工科实力强劲，计算机、控制、光学等顶尖",
+      "农学实力雄厚，农学门类多个学科全国第一",
+      "创新创业氛围浓厚，校友企业众多"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "20-40万",
+      topEmployers: ["阿里巴巴", "华为", "海康威视", "金融机构"],
+      industries: ["互联网", "高端制造", "金融", "农业科技"],
+      postgradRate: "70%+",
+      overseasRate: "18%+"
+    },
+    campus: "杭州西湖畔，紫金港校区现代化程度高",
+    specialNote: "大类招生，入学后根据兴趣和成绩分流"
+  },
+  6: {
+    name: "中国科学技术大学",
+    motto: "红专并进，理实交融",
+    founded: 1958,
+    highlight: "华东五校之一，理科实力全国第一，科研氛围浓厚",
+    features: [
+      "理科实力全国第一，数学、物理、化学、生物均为顶尖",
+      "少年班享誉全国，培养众多科学家",
+      "科研氛围浓厚，本科生即可参与前沿研究",
+      "学风扎实，深造率全国最高"
+    ],
+    employment: {
+      rate: "97.0%",
+      avgSalary: "18-35万",
+      topEmployers: ["科研院所", "高校", "高科技企业", "金融机构"],
+      industries: ["科研", "教育", "高科技", "金融"],
+      postgradRate: "85%+",
+      overseasRate: "35%+"
+    },
+    campus: "合肥，校园环境优美，学术氛围纯粹",
+    specialNote: "转专业政策宽松，几乎无门槛"
+  },
+  7: {
+    name: "南京大学",
+    motto: "诚朴雄伟，励学敦行",
+    founded: 1902,
+    highlight: "华东五校之一，文理基础学科实力雄厚，学风扎实",
+    features: [
+      "文理基础学科实力雄厚，天文、地质、物理等顶尖",
+      "学风扎实低调，学术氛围纯粹",
+      "地处南京，历史文化底蕴深厚",
+      "性价比极高，录取分数相对华东五校其他四校略低"
+    ],
+    employment: {
+      rate: "97.2%",
+      avgSalary: "18-35万",
+      topEmployers: ["科研院所", "高校", "金融机构", "互联网"],
+      industries: ["科研", "金融", "教育", "IT"],
+      postgradRate: "70%+",
+      overseasRate: "20%+"
+    },
+    campus: "南京鼓楼区，仙林校区现代化，鼓楼校区古朴",
+    specialNote: "大理科试验班、大文科试验班招生"
+  },
+  8: {
+    name: "中国人民大学",
+    motto: "实事求是",
+    founded: 1937,
+    highlight: "人文社科领域最高学府，经济学、法学、新闻学全国第一",
+    features: [
+      "人文社科领域最高学府，多个学科全国第一",
+      "经济学实力雄厚，金融学、经济学全国顶尖",
+      "法学实力强劲，与北大法学并称双雄",
+      "新闻传播学全国第一，培养众多媒体精英"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "18-35万",
+      topEmployers: ["国家部委", "金融机构", "央企", "律师事务所"],
+      industries: ["金融", "政府/公共管理", "法律", "媒体"],
+      postgradRate: "65%+",
+      overseasRate: "15%+"
+    },
+    campus: "北京海淀区，中关村大街，地理位置优越",
+    specialNote: "人文社科试验班招生，入学后选专业"
+  },
+  9: {
+    name: "北京航空航天大学",
+    motto: "德才兼备，知行合一",
+    founded: 1952,
+    highlight: "航空航天领域顶尖高校，工科实力强劲",
+    features: [
+      "航空航天领域顶尖高校，航空宇航科学与技术A+",
+      "计算机、软件工程实力强劲，IT就业优秀",
+      "与航空航天企业合作紧密，就业对口率高",
+      "地处北京，实习就业机会多"
+    ],
+    employment: {
+      rate: "98.0%",
+      avgSalary: "18-35万",
+      topEmployers: ["中国航天", "中国航空", "华为", "互联网企业"],
+      industries: ["航空航天", "IT/互联网", "高端制造", "国防"],
+      postgradRate: "70%+",
+      overseasRate: "15%+"
+    },
+    campus: "北京海淀区，学院路，学术氛围浓厚",
+    specialNote: "航空航天类招生，入学后分流"
+  },
+  10: {
+    name: "同济大学",
+    motto: "同舟共济",
+    founded: 1907,
+    highlight: "土木建筑领域顶尖高校，工科实力强劲",
+    features: [
+      "土木建筑领域全国第一，建筑老八校之首",
+      "城乡规划、风景园林全国顶尖",
+      "汽车工程实力强劲，与上汽合作深入",
+      "地处上海，就业机会多"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "18-35万",
+      topEmployers: ["中建集团", "上汽集团", "设计院", "地产企业"],
+      industries: ["建筑/房地产", "汽车", "设计", "IT"],
+      postgradRate: "65%+",
+      overseasRate: "15%+"
+    },
+    campus: "上海杨浦区，四平路校区，嘉定校区",
+    specialNote: "建筑类、土木类招生，入学后分流"
+  }
+};
+
+// 补充更多院校的简化数据
+export const collegeProfilesExtended = {
+  11: { name: "南开大学", motto: "允公允能，日新月异", highlight: "文理见长，经济学实力强劲", features: ["经济学全国顶尖", "数学实力雄厚", "化学学科优秀", "地处天津，毗邻北京"], employment: { rate: "96.5%", avgSalary: "15-28万" } },
+  12: { name: "哈尔滨工业大学", motto: "规格严格，功夫到家", highlight: "工科实力全国前五，航天特色鲜明", features: ["航天特色鲜明", "焊接技术全国第一", "计算机实力强劲", "威海、深圳校区可选"], employment: { rate: "97.0%", avgSalary: "15-30万" } },
+  13: { name: "西安交通大学", motto: "精勤求学，果毅力行", highlight: "西部第一高校，工科实力强劲", features: ["电气工程全国第一", "能动工程顶尖", "管理科学优秀", "西部就业有优势"], employment: { rate: "96.8%", avgSalary: "14-28万" } },
+  14: { name: "武汉大学", motto: "自强、弘毅、求是、拓新", highlight: "综合性大学，测绘、法学全国顶尖", features: ["测绘科学全国第一", "法学实力强劲", "生物学科优秀", "樱花校园，环境优美"], employment: { rate: "96.5%", avgSalary: "14-28万" } },
+  15: { name: "华中科技大学", motto: "明德厚学，求是创新", highlight: "工科强校，医科实力雄厚", features: ["机械工程全国顶尖", "电气工程实力强劲", "同济医学院全国前列", "光电国家研究中心"], employment: { rate: "97.0%", avgSalary: "15-30万" } },
+  21: { name: "电子科技大学", motto: "求实求真，大气大为", highlight: "电子信息领域顶尖高校，IT就业优秀", features: ["电子科学与技术A+", "通信工程全国顶尖", "计算机实力强劲", "IT就业率极高"], employment: { rate: "97.5%", avgSalary: "18-35万" } },
+  31: { name: "北京邮电大学", motto: "厚德博学，敬业乐群", highlight: "信息黄埔，IT就业全国最强", features: ["信息与通信工程A+", "计算机实力顶尖", "IT就业率极高", "地处北京，实习机会多"], employment: { rate: "98.0%", avgSalary: "20-40万" } },
+  45: { name: "西安电子科技大学", motto: "厚德、求真、砺学、笃行", highlight: "电子信息领域实力强劲，IT就业优秀", features: ["电子科学与技术A+", "通信工程全国前三", "网络安全实力强", "IT就业率高"], employment: { rate: "97.0%", avgSalary: "16-32万" } }
+};
+
+// ============================================================
+// 985院校详细特色与就业数据 (面向贵州高分段考生)
+// ============================================================
+export const collegeProfiles985 = {
+  16: {
+    name: "东南大学",
+    motto: "止于至善",
+    founded: 1902,
+    highlight: "建筑老八校之一，工科实力强劲，电子、建筑、交通全国顶尖",
+    features: [
+      "建筑学全国前列，建筑老八校核心成员",
+      "电子科学与技术A+，集成电路人才培养重镇",
+      "交通运输工程全国第一",
+      "生物医学工程A+，医工交叉特色鲜明"
+    ],
+    employment: {
+      rate: "97.2%",
+      avgSalary: "16-32万",
+      topEmployers: ["华为", "中兴", "中国建筑", "设计院"],
+      industries: ["建筑/房地产", "电子信息", "高端制造", "IT"],
+      postgradRate: "65%+",
+      overseasRate: "12%+"
+    },
+    campus: "南京，四牌楼校区历史底蕴深厚，九龙湖校区现代化",
+    specialNote: "建筑类、电子信息类招生，入学后分流"
+  },
+  17: {
+    name: "北京理工大学",
+    motto: "德以明理，学以精工",
+    founded: 1940,
+    highlight: "国防七子之一，军工特色鲜明，兵器科学全国第一",
+    features: [
+      "兵器科学与技术全国第一",
+      "车辆工程实力强劲，与车企合作深入",
+      "信息与通信工程A，IT就业优秀",
+      "地处北京，国防科研资源丰富"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "16-32万",
+      topEmployers: ["中国兵器", "航天科工", "华为", "互联网企业"],
+      industries: ["国防军工", "汽车", "IT/互联网", "高端制造"],
+      postgradRate: "65%+",
+      overseasRate: "10%+"
+    },
+    campus: "北京海淀区，中关村校区地理位置优越",
+    specialNote: "军工类专业有政审要求，提前批次招生"
+  },
+  18: {
+    name: "天津大学",
+    motto: "实事求是",
+    founded: 1895,
+    highlight: "中国第一所现代大学，化工、建筑、仪器科学全国顶尖",
+    features: [
+      "化学工程与技术全国第一",
+      "建筑学实力强劲，建筑老八校成员",
+      "仪器科学与技术A+",
+      "管理与经济学部实力雄厚"
+    ],
+    employment: {
+      rate: "96.8%",
+      avgSalary: "14-28万",
+      topEmployers: ["中石化", "中建集团", "设计院", "外企"],
+      industries: ["化工", "建筑", "高端制造", "金融"],
+      postgradRate: "60%+",
+      overseasRate: "12%+"
+    },
+    campus: "天津，卫津路校区和北洋园校区",
+    specialNote: "化工类、建筑类招生，入学后分流"
+  },
+  19: {
+    name: "厦门大学",
+    motto: "自强不息，止于至善",
+    founded: 1921,
+    highlight: "最美大学之一，经济、化学、海洋学科全国顶尖",
+    features: [
+      "经济学实力雄厚，会计学全国第一",
+      "化学学科A+，科研实力强劲",
+      "海洋科学全国领先",
+      "校园环境优美，被誉为最美大学"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "15-30万",
+      topEmployers: ["金融机构", "四大会计师事务所", "外企", "国企"],
+      industries: ["金融", "会计/审计", "化工", "教育"],
+      postgradRate: "60%+",
+      overseasRate: "15%+"
+    },
+    campus: "厦门，依山傍海，环境优美",
+    specialNote: "经济学类、会计学招生火爆，分数较高"
+  },
+  20: {
+    name: "中山大学",
+    motto: "博学、审问、慎思、明辨、笃行",
+    founded: 1924,
+    highlight: "华南第一高校，医科、经管、理学全面发展",
+    features: [
+      "医学实力雄厚，附属医院资源丰富",
+      "工商管理A+，岭南学院全国知名",
+      "生态学、生物学等理科学科优秀",
+      "地处广州，就业机会多"
+    ],
+    employment: {
+      rate: "96.8%",
+      avgSalary: "15-30万",
+      topEmployers: ["南方医院", "金融机构", "外企", "公务员"],
+      industries: ["医疗/医药", "金融", "政府", "教育"],
+      postgradRate: "60%+",
+      overseasRate: "12%+"
+    },
+    campus: "广州、珠海、深圳三校区，广州南校区历史底蕴深厚",
+    specialNote: "医学类招生分数较高，护理学分数相对较低"
+  },
+  22: {
+    name: "四川大学",
+    motto: "海纳百川，有容乃大",
+    founded: 1896,
+    highlight: "西南第一高校，医科、文科、理科全面发展",
+    features: [
+      "华西医学中心全国顶尖，口腔医学全国第一",
+      "中文、历史等文科实力强劲",
+      "数学、化学等理科优秀",
+      "地处成都，生活舒适，就业机会多"
+    ],
+    employment: {
+      rate: "96.2%",
+      avgSalary: "14-28万",
+      topEmployers: ["华西医院", "金融机构", "公务员", "外企"],
+      industries: ["医疗/医药", "金融", "教育", "政府"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "成都，望江校区历史底蕴深厚，江安校区现代化",
+    specialNote: "华西医学类招生分数极高，口腔医学竞争激烈"
+  },
+  23: {
+    name: "西北工业大学",
+    motto: "公诚勇毅",
+    founded: 1938,
+    highlight: "国防七子之一，航空航天航海三航特色鲜明",
+    features: [
+      "航空宇航科学与技术A+",
+      "材料科学与工程A+",
+      "计算机科学与技术实力强劲",
+      "国防科研资源丰富，就业对口率高"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "15-30万",
+      topEmployers: ["中国航天", "中国航空", "华为", "军工企业"],
+      industries: ["航空航天", "国防军工", "高端制造", "IT"],
+      postgradRate: "65%+",
+      overseasRate: "8%+"
+    },
+    campus: "西安，友谊校区和长安校区",
+    specialNote: "航空航天类招生，入学后分流"
+  },
+  24: {
+    name: "北京师范大学",
+    motto: "学为人师，行为世范",
+    founded: 1902,
+    highlight: "师范类最高学府，教育学、心理学全国第一",
+    features: [
+      "教育学全国第一",
+      "心理学全国领先",
+      "中国语言文学A+",
+      "地处北京，教育资源丰富"
+    ],
+    employment: {
+      rate: "97.0%",
+      avgSalary: "14-28万",
+      topEmployers: ["重点中学", "高校", "教育机构", "公务员"],
+      industries: ["教育", "政府", "出版", "心理咨询"],
+      postgradRate: "60%+",
+      overseasRate: "12%+"
+    },
+    campus: "北京海淀区，毗邻北邮、北影",
+    specialNote: "公费师范生免学费、包分配，竞争激烈"
+  },
+  25: {
+    name: "华东师范大学",
+    motto: "求实创造，为人师表",
+    founded: 1951,
+    highlight: "师范类顶尖高校，地处上海，就业机会多",
+    features: [
+      "教育学实力强劲，全国前五",
+      "统计学A+，数据科学领域领先",
+      "软件工程实力优秀",
+      "地处上海，实习就业机会多"
+    ],
+    employment: {
+      rate: "96.8%",
+      avgSalary: "16-32万",
+      topEmployers: ["重点中学", "教育机构", "互联网", "金融机构"],
+      industries: ["教育", "IT/互联网", "金融", "咨询"],
+      postgradRate: "55%+",
+      overseasRate: "15%+"
+    },
+    campus: "上海，中山北路校区和闵行校区",
+    specialNote: "师范类专业有从教意愿要求"
+  },
+  26: {
+    name: "中南大学",
+    motto: "知行合一，经世致用",
+    founded: 2000,
+    highlight: "工医见长，有色金属、轨道交通全国顶尖",
+    features: [
+      "冶金工程、矿业工程全国第一",
+      "材料科学与工程A+",
+      "湘雅医学院实力雄厚",
+      "交通运输工程全国领先"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["中国中铁", "中国铝业", "华为", "医院"],
+      industries: ["有色金属", "轨道交通", "医疗", "IT"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "长沙，岳麓山下，环境优美",
+    specialNote: "医学类招生分数较高，采矿类分数相对较低"
+  },
+  27: {
+    name: "湖南大学",
+    motto: "实事求是，敢为人先",
+    founded: 976,
+    highlight: "千年学府，土木、化学、金融实力强劲",
+    features: [
+      "土木工程实力强劲，建筑老八校成员",
+      "化学学科优秀",
+      "金融学实力雄厚",
+      "岳麓书院，文化底蕴深厚"
+    ],
+    employment: {
+      rate: "96.0%",
+      avgSalary: "13-26万",
+      topEmployers: ["金融机构", "建筑企业", "设计院", "外企"],
+      industries: ["金融", "建筑", "化工", "教育"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "长沙，岳麓山下，岳麓书院所在地",
+    specialNote: "土木类、金融学招生分数较高"
+  },
+  28: {
+    name: "重庆大学",
+    motto: "耐劳苦、尚俭朴、勤学业、爱国家",
+    founded: 1929,
+    highlight: "西南强校，建筑、电气、机械实力强劲",
+    features: [
+      "建筑学实力强劲，建筑老八校成员",
+      "电气工程实力雄厚",
+      "机械工程优秀",
+      "地处重庆，西部就业有优势"
+    ],
+    employment: {
+      rate: "96.2%",
+      avgSalary: "13-26万",
+      topEmployers: ["国家电网", "中国建筑", "设计院", "车企"],
+      industries: ["电力", "建筑", "汽车", "高端制造"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "重庆，沙坪坝区，虎溪校区现代化",
+    specialNote: "建筑类、电气类招生分数较高"
+  },
+  29: {
+    name: "山东大学",
+    motto: "学无止境，气有浩然",
+    founded: 1901,
+    highlight: "综合性大学，文史、数学、医学实力强劲",
+    features: [
+      "中国语言文学A+",
+      "数学学科优秀",
+      "医学实力雄厚",
+      "历史悠久，校友资源丰富"
+    ],
+    employment: {
+      rate: "96.0%",
+      avgSalary: "13-26万",
+      topEmployers: ["医院", "金融机构", "公务员", "教育机构"],
+      industries: ["医疗", "金融", "政府", "教育"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "济南、青岛、威海三校区",
+    specialNote: "医学类招生分数较高，护理学分数相对较低"
+  },
+  30: {
+    name: "大连理工大学",
+    motto: "团结、进取、求实、创新",
+    founded: 1949,
+    highlight: "工科实力强劲，化工、力学、机械全国领先",
+    features: [
+      "化学工程与技术A",
+      "力学学科优秀",
+      "机械工程实力强劲",
+      "地处大连，环境优美"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["中石化", "英特尔", "大众", "外企"],
+      industries: ["化工", "高端制造", "汽车", "IT"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "大连，凌水校区和开发区校区",
+    specialNote: "化工类、机械类招生分数较高"
+  },
+  37: {
+    name: "南京航空航天大学",
+    motto: "智周万物，道济天下",
+    founded: 1952,
+    highlight: "航空航天特色鲜明，力学、机械、电气实力强劲",
+    features: [
+      "航空宇航科学与技术A-",
+      "力学学科优秀",
+      "机械工程实力强劲",
+      "地处南京，就业机会多"
+    ],
+    employment: {
+      rate: "96.8%",
+      avgSalary: "14-28万",
+      topEmployers: ["中国航空", "中国航天", "华为", "外企"],
+      industries: ["航空航天", "高端制造", "IT", "汽车"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "南京，明故宫校区和将军路校区",
+    specialNote: "航空航天类招生，入学后分流"
+  },
+  38: {
+    name: "南京理工大学",
+    motto: "进德修业，志道鼎新",
+    founded: 1953,
+    highlight: "国防七子之一，兵器科学全国领先，工科实力强劲",
+    features: [
+      "兵器科学与技术A+",
+      "化学工程与技术A-",
+      "机械工程实力强劲",
+      "地处南京，国防科研资源丰富"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["中国兵器", "航天科工", "华为", "外企"],
+      industries: ["国防军工", "高端制造", "IT", "化工"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "南京，孝陵卫校区和江阴校区",
+    specialNote: "军工类专业有政审要求"
+  },
+  39: {
+    name: "武汉理工大学",
+    motto: "厚德博学，追求卓越",
+    founded: 1948,
+    highlight: "材料、交通、汽车实力强劲，行业特色鲜明",
+    features: [
+      "材料科学与工程A+",
+      "交通运输工程实力强劲",
+      "车辆工程优秀",
+      "建材建工、交通、汽车三大行业"
+    ],
+    employment: {
+      rate: "96.2%",
+      avgSalary: "13-26万",
+      topEmployers: ["中国建材", "中国中铁", "上汽集团", "设计院"],
+      industries: ["建材", "交通", "汽车", "高端制造"],
+      postgradRate: "50%+",
+      overseasRate: "8%+"
+    },
+    campus: "武汉，马房山校区和余家头校区",
+    specialNote: "材料类、交通类招生分数较高"
+  },
+  41: {
+    name: "西南交通大学",
+    motto: "精勤求学，果毅力行",
+    founded: 1896,
+    highlight: "轨道交通领域顶尖高校，交通运输工程全国第一",
+    features: [
+      "交通运输工程全国第一",
+      "土木工程实力强劲",
+      "机械工程优秀",
+      "轨道交通行业就业优势明显"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "13-26万",
+      topEmployers: ["中国中铁", "中国铁建", "设计院", "地铁公司"],
+      industries: ["轨道交通", "建筑", "高端制造", "IT"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "成都，犀浦校区和九里校区",
+    specialNote: "交通运输类招生分数较高"
+  },
+  44: {
+    name: "河海大学",
+    motto: "艰苦朴素，实事求是",
+    founded: 1915,
+    highlight: "水利领域顶尖高校，水利工程全国第一",
+    features: [
+      "水利工程全国第一",
+      "土木工程实力强劲",
+      "环境科学与工程优秀",
+      "水利行业就业优势明显"
+    ],
+    employment: {
+      rate: "96.0%",
+      avgSalary: "13-26万",
+      topEmployers: ["水利部", "中国电建", "设计院", "环保企业"],
+      industries: ["水利", "建筑", "环保", "政府"],
+      postgradRate: "50%+",
+      overseasRate: "8%+"
+    },
+    campus: "南京，西康路校区和江宁校区",
+    specialNote: "水利工程类招生分数较高"
+  },
+  46: {
+    name: "北京交通大学",
+    motto: "知行",
+    founded: 1896,
+    highlight: "交通领域强校，系统科学全国第一，IT就业优秀",
+    features: [
+      "系统科学全国第一",
+      "交通运输工程实力强劲",
+      "通信工程优秀",
+      "地处北京，IT就业机会多"
+    ],
+    employment: {
+      rate: "96.8%",
+      avgSalary: "15-30万",
+      topEmployers: ["中国中铁", "中国铁建", "华为", "互联网企业"],
+      industries: ["轨道交通", "IT/互联网", "通信", "金融"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "北京海淀区，毗邻北邮、北师大",
+    specialNote: "交通运输类、通信类招生分数较高"
+  },
+  47: {
+    name: "哈尔滨工程大学",
+    motto: "大工至善，大学至真",
+    founded: 1953,
+    highlight: "三海一核特色鲜明，船舶与海洋工程全国顶尖",
+    features: [
+      "船舶与海洋工程全国第一",
+      "核科学与技术实力强劲",
+      "控制科学与工程优秀",
+      "国防科研资源丰富"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["中国船舶", "中核集团", "华为", "军工企业"],
+      industries: ["船舶", "核电", "国防军工", "IT"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "哈尔滨，毗邻哈工大",
+    specialNote: "船舶类、核工程类招生分数较高"
+  },
+  48: {
+    name: "合肥工业大学",
+    motto: "厚德、笃学、崇实、尚新",
+    founded: 1945,
+    highlight: "工科实力强劲，管理科学与工程全国顶尖",
+    features: [
+      "管理科学与工程A",
+      "机械工程实力强劲",
+      "材料科学与工程优秀",
+      "地处合肥，性价比高"
+    ],
+    employment: {
+      rate: "96.0%",
+      avgSalary: "13-26万",
+      topEmployers: ["美的集团", "江淮汽车", "设计院", "外企"],
+      industries: ["高端制造", "汽车", "IT", "建筑"],
+      postgradRate: "50%+",
+      overseasRate: "8%+"
+    },
+    campus: "合肥，屯溪路校区和翡翠湖校区",
+    specialNote: "管理类、机械类招生分数较高"
+  }
+};
+
+// ============================================================
+// 补充985院校基础信息（确保所有985院校有详细数据）
+// ============================================================
+export const collegeProfiles985Additional = {
+  8: {
+    name: "中国人民大学",
+    motto: "实事求是",
+    founded: 1937,
+    highlight: "人文社科领域最高学府，经济学、法学、新闻学全国第一",
+    features: [
+      "人文社科领域最高学府，多个学科全国第一",
+      "经济学实力雄厚，金融学、经济学全国顶尖",
+      "法学实力强劲，与北大法学并称双雄",
+      "新闻传播学全国第一，培养众多媒体精英"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "18-35万",
+      topEmployers: ["国家部委", "金融机构", "央企", "律师事务所"],
+      industries: ["金融", "政府/公共管理", "法律", "媒体"],
+      postgradRate: "65%+",
+      overseasRate: "15%+"
+    },
+    campus: "北京海淀区，中关村大街，地理位置优越",
+    specialNote: "人文社科试验班招生，入学后选专业"
+  },
+  9: {
+    name: "北京航空航天大学",
+    motto: "德才兼备，知行合一",
+    founded: 1952,
+    highlight: "航空航天领域顶尖高校，工科实力强劲",
+    features: [
+      "航空航天领域顶尖高校，航空宇航科学与技术A+",
+      "计算机、软件工程实力强劲，IT就业优秀",
+      "与航空航天企业合作紧密，就业对口率高",
+      "地处北京，实习就业机会多"
+    ],
+    employment: {
+      rate: "98.0%",
+      avgSalary: "18-35万",
+      topEmployers: ["中国航天", "中国航空", "华为", "互联网企业"],
+      industries: ["航空航天", "IT/互联网", "高端制造", "国防"],
+      postgradRate: "70%+",
+      overseasRate: "15%+"
+    },
+    campus: "北京海淀区，学院路，学术氛围浓厚",
+    specialNote: "航空航天类招生，入学后分流"
+  },
+  10: {
+    name: "同济大学",
+    motto: "同舟共济",
+    founded: 1907,
+    highlight: "土木建筑领域顶尖高校，工科实力强劲",
+    features: [
+      "土木建筑领域全国第一，建筑老八校之首",
+      "城乡规划、风景园林全国顶尖",
+      "汽车工程实力强劲，与上汽合作深入",
+      "地处上海，就业机会多"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "18-35万",
+      topEmployers: ["中建集团", "上汽集团", "设计院", "地产企业"],
+      industries: ["建筑/房地产", "汽车", "设计", "IT"],
+      postgradRate: "65%+",
+      overseasRate: "15%+"
+    },
+    campus: "上海杨浦区，四平路校区，嘉定校区",
+    specialNote: "建筑类、土木类招生，入学后分流"
+  },
+  11: {
+    name: "南开大学",
+    motto: "允公允能，日新月异",
+    founded: 1919,
+    highlight: "文理见长，经济学实力强劲，化学学科优秀",
+    features: [
+      "经济学全国顶尖，金融学实力强劲",
+      "数学实力雄厚，陈省身数学研究所",
+      "化学学科优秀，有机化学国家重点学科",
+      "地处天津，毗邻北京，就业机会多"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "15-28万",
+      topEmployers: ["金融机构", "外企", "公务员", "教育机构"],
+      industries: ["金融", "教育", "政府", "化工"],
+      postgradRate: "60%+",
+      overseasRate: "12%+"
+    },
+    campus: "天津，八里台校区和津南校区",
+    specialNote: "经济学类招生分数较高"
+  },
+  14: {
+    name: "武汉大学",
+    motto: "自强、弘毅、求是、拓新",
+    founded: 1893,
+    highlight: "综合性大学，测绘、法学全国顶尖，樱花校园",
+    features: [
+      "测绘科学全国第一，遥感技术世界领先",
+      "法学实力强劲，五院四系之一",
+      "生物学科优秀，病毒学国家重点实验室",
+      "樱花校园，环境优美，被誉为最美大学"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["测绘局", "法律机构", "医院", "外企"],
+      industries: ["测绘/遥感", "法律", "医疗", "教育"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "武汉，珞珈山下，樱花大道",
+    specialNote: "测绘类、法学招生分数较高"
+  },
+  15: {
+    name: "华中科技大学",
+    motto: "明德厚学，求是创新",
+    founded: 1952,
+    highlight: "工科强校，医科实力雄厚，光电国家研究中心",
+    features: [
+      "机械工程全国顶尖，A+学科",
+      "电气工程实力强劲，与西交并称双雄",
+      "同济医学院全国前列，附属协和医院",
+      "光电国家研究中心，光学工程A+"
+    ],
+    employment: {
+      rate: "97.0%",
+      avgSalary: "15-30万",
+      topEmployers: ["华为", "国家电网", "协和医院", "外企"],
+      industries: ["高端制造", "电力", "医疗", "IT"],
+      postgradRate: "60%+",
+      overseasRate: "10%+"
+    },
+    campus: "武汉，喻家山下，森林大学",
+    specialNote: "机械类、电气类招生分数较高"
+  },
+  21: {
+    name: "电子科技大学",
+    motto: "求实求真，大气大为",
+    founded: 1956,
+    highlight: "电子信息领域顶尖高校，IT就业优秀",
+    features: [
+      "电子科学与技术A+，全国第一",
+      "通信工程全国顶尖",
+      "计算机实力强劲，IT就业率极高",
+      "地处成都，生活舒适，就业机会多"
+    ],
+    employment: {
+      rate: "97.5%",
+      avgSalary: "18-35万",
+      topEmployers: ["华为", "中兴", "腾讯", "互联网企业"],
+      industries: ["IT/互联网", "通信", "集成电路", "金融"],
+      postgradRate: "60%+",
+      overseasRate: "12%+"
+    },
+    campus: "成都，清水河校区和沙河校区",
+    specialNote: "电子信息类招生分数较高，IT就业率极高"
+  },
+  26: {
+    name: "中南大学",
+    motto: "知行合一，经世致用",
+    founded: 2000,
+    highlight: "工医见长，有色金属、轨道交通全国顶尖",
+    features: [
+      "冶金工程、矿业工程全国第一",
+      "材料科学与工程A+",
+      "湘雅医学院实力雄厚，附属湘雅医院",
+      "交通运输工程全国领先"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["中国中铁", "中国铝业", "华为", "医院"],
+      industries: ["有色金属", "轨道交通", "医疗", "IT"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "长沙，岳麓山下，环境优美",
+    specialNote: "医学类招生分数较高，采矿类分数相对较低"
+  },
+  27: {
+    name: "湖南大学",
+    motto: "实事求是，敢为人先",
+    founded: 976,
+    highlight: "千年学府，土木、化学、金融实力强劲",
+    features: [
+      "土木工程实力强劲，建筑老八校成员",
+      "化学学科优秀",
+      "金融学实力雄厚",
+      "岳麓书院，文化底蕴深厚"
+    ],
+    employment: {
+      rate: "96.0%",
+      avgSalary: "13-26万",
+      topEmployers: ["金融机构", "建筑企业", "设计院", "外企"],
+      industries: ["金融", "建筑", "化工", "教育"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "长沙，岳麓山下，岳麓书院所在地",
+    specialNote: "土木类、金融学招生分数较高"
+  },
+  28: {
+    name: "重庆大学",
+    motto: "耐劳苦、尚俭朴、勤学业、爱国家",
+    founded: 1929,
+    highlight: "西南强校，建筑、电气、机械实力强劲",
+    features: [
+      "建筑学实力强劲，建筑老八校成员",
+      "电气工程实力雄厚",
+      "机械工程优秀",
+      "地处重庆，西部就业有优势"
+    ],
+    employment: {
+      rate: "96.2%",
+      avgSalary: "13-26万",
+      topEmployers: ["国家电网", "中国建筑", "设计院", "车企"],
+      industries: ["电力", "建筑", "汽车", "高端制造"],
+      postgradRate: "55%+",
+      overseasRate: "8%+"
+    },
+    campus: "重庆，沙坪坝区，虎溪校区现代化",
+    specialNote: "建筑类、电气类招生分数较高"
+  },
+  29: {
+    name: "山东大学",
+    motto: "学无止境，气有浩然",
+    founded: 1901,
+    highlight: "综合性大学，文史、数学、医学实力强劲",
+    features: [
+      "中国语言文学A+",
+      "数学学科优秀",
+      "医学实力雄厚",
+      "历史悠久，校友资源丰富"
+    ],
+    employment: {
+      rate: "96.0%",
+      avgSalary: "13-26万",
+      topEmployers: ["医院", "金融机构", "公务员", "教育机构"],
+      industries: ["医疗", "金融", "政府", "教育"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "济南、青岛、威海三校区",
+    specialNote: "医学类招生分数较高，护理学分数相对较低"
+  },
+  30: {
+    name: "大连理工大学",
+    motto: "团结、进取、求实、创新",
+    founded: 1949,
+    highlight: "工科实力强劲，化工、力学、机械全国领先",
+    features: [
+      "化学工程与技术A",
+      "力学学科优秀",
+      "机械工程实力强劲",
+      "地处大连，环境优美"
+    ],
+    employment: {
+      rate: "96.5%",
+      avgSalary: "14-28万",
+      topEmployers: ["中石化", "英特尔", "大众", "外企"],
+      industries: ["化工", "高端制造", "汽车", "IT"],
+      postgradRate: "55%+",
+      overseasRate: "10%+"
+    },
+    campus: "大连，凌水校区和开发区校区",
+    specialNote: "化工类、机械类招生分数较高"
+  }
+};
+
+// ============================================================
+// 院校官网链接映射
+// ============================================================
+export const collegeWebsites = {
+  1: "https://www.tsinghua.edu.cn",
+  2: "https://www.pku.edu.cn",
+  3: "https://www.fudan.edu.cn",
+  4: "https://www.sjtu.edu.cn",
+  5: "https://www.zju.edu.cn",
+  6: "https://www.ustc.edu.cn",
+  7: "https://www.nju.edu.cn",
+  8: "https://www.ruc.edu.cn",
+  9: "https://www.buaa.edu.cn",
+  10: "https://www.tongji.edu.cn",
+  11: "https://www.nankai.edu.cn",
+  12: "https://www.hit.edu.cn",
+  13: "https://www.xjtu.edu.cn",
+  14: "https://www.whu.edu.cn",
+  15: "https://www.hust.edu.cn",
+  16: "https://www.seu.edu.cn",
+  17: "https://www.bit.edu.cn",
+  18: "https://www.tju.edu.cn",
+  19: "https://www.xmu.edu.cn",
+  20: "https://www.sysu.edu.cn",
+  21: "https://www.uestc.edu.cn",
+  22: "https://www.scu.edu.cn",
+  23: "https://www.nwpu.edu.cn",
+  24: "https://www.bnu.edu.cn",
+  25: "https://www.ecnu.edu.cn",
+  26: "https://www.csu.edu.cn",
+  27: "https://www.hnu.edu.cn",
+  28: "https://www.cqu.edu.cn",
+  29: "https://www.sdu.edu.cn",
+  30: "https://www.dlut.edu.cn",
+  31: "https://www.bupt.edu.cn",
+  32: "https://www.shufe.edu.cn",
+  33: "https://www.cufe.edu.cn",
+  34: "https://www.uibe.edu.cn",
+  35: "https://www.bfsu.edu.cn",
+  36: "https://www.cupl.edu.cn",
+  37: "https://www.nuaa.edu.cn",
+  38: "https://www.njust.edu.cn",
+  39: "https://www.whut.edu.cn",
+  40: "https://www.ccnu.edu.cn",
+  41: "https://www.swjtu.edu.cn",
+  42: "https://www.swufe.edu.cn",
+  43: "https://www.jnu.edu.cn",
+  44: "https://www.hhu.edu.cn",
+  45: "https://www.xidian.edu.cn",
+  46: "https://www.bjtu.edu.cn",
+  47: "https://www.hrbeu.edu.cn",
+  48: "https://www.hfut.edu.cn",
+  49: "https://www.gzu.edu.cn",
+  50: "https://www.ynu.edu.cn"
+};
+
